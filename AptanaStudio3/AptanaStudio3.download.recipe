@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest version of AptanaStudio3.</string>
     <key>Identifier</key>
-    <string>edu.usc.download.AptanaStudio3</string>
+    <string>com.github.scriptingosx.download.AptanaStudio3</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

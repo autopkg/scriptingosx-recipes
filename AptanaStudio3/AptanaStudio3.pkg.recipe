@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Builds AptanaStudio3 pkg from the dmg downloaded.</string>
     <key>Identifier</key>
-    <string>edu.usc.pkg.AptanaStudio3</string>
+    <string>com.github.scriptingosx.pkg.AptanaStudio3</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -14,7 +14,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>edu.usc.brew.AptanaStudio3</string>
+    <string>com.github.scriptingosx.brew.AptanaStudio3</string>
     <key>Process</key>
     <array>
         <dict>
