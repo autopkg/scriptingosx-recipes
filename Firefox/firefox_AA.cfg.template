@@ -1,0 +1,26 @@
+// This file sets some default prefs for use at USC Labs
+// and locks down some other prefs.
+//
+// Safari Migration
+lockPref("browser.migration.version", 1);
+lockPref("browser.places.importBookmarksHTML", false);
+lockPref("network.cookie.prefsMigrated", true);
+
+// application updates
+lockPref("app.update.enabled", false);
+lockPref("app.update.auto", false);
+lockPref("extensions.update.autoUpdate", false);
+lockPref("extensions.update.enabled", false);
+lockPref("browser.search.update", false);
+//
+// Password Manager
+pref("signon.rememberSignons", false);
+//
+// Default browser check
+pref("browser.shell.checkDefaultBrowser", false);
+//
+// Home page
+pref("browser.startup.homepage","${homepage_url}");
+pref("browser.startup.homepage_reset","${homepage_url}");
+pref("browser.startup.homepage_override.buildID", "20140127194636");
+pref("browser.startup.homepage_override.mstone", "${version}");

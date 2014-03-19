@@ -1,0 +1,43 @@
+{ 
+  "homepage" : "http://www.usc.edu", 
+  "homepage_is_newtabpage" : true, 
+  "browser" : { 
+    "show_home_button" : true, 
+    "check_default_browser" : false
+  },
+  "session" : {
+    "urls_to_restore_on_startup" : [
+      "http://www.usc.edu/"
+    ]
+  },
+  "bookmark_bar" : { 
+    "show_on_all_tabs" : true 
+  }, 
+  "distribution" : {
+    "auto_launch_chrome": false,
+    "chrome": true,
+    "import_bookmarks": false,
+    "ping_delay": 60,
+    "show_welcome_page": false,
+    "skip_first_run_ui": true,
+    "suppress_first_run_bubble": true,
+    "do_not_create_desktop_shortcut": true,
+    "do_not_create_quick_launch_shortcut": true,
+    "do_not_launch_chrome": true,
+    "do_not_register_for_update_launch": true,
+    "log_file": "log.txt",
+    "make_chrome_default": false,
+    "make_chrome_default_for_user": false,
+    "suppress_first_run_default_browser_prompt": true,
+    "multi_install": true,
+    "require_eula": false,
+    "system_level": true,
+    "verbose_logging": true
+  }, 
+  "sync_promo" : {
+  	"user_skipped" : true
+  },
+  "first_run_tabs" : [
+  	"http://www.usc.edu/"
+  ]
+}

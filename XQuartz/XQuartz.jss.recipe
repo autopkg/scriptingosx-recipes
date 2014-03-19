@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Description</key>
+    <string>Uses parent pkg recipe to download latest XQuartz and assigns correct version number.</string>
+    <key>Identifier</key>
+    <string>com.github.scriptingosx.jss.XQuartz</string>
+    <key>Input</key>
+    <dict>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.5</string>
+    <key>ParentRecipe</key>
+    <string>com.github.scriptingosx.pkg.XQuartz</string>
+    <key>Process</key>
+    <array>
+      <dict>
+        <key>Arguments</key>
+        <dict>
+          <key>prod_name</key>
+          <string>%NAME%</string>
+          <key>category</key>
+          <string>Tools</string>
+          <key>pkg_path</key>
+          <string>%pathname%</string>
+        </dict>
+        <key>Processor</key>
+        <string>JSSImporter</string>
+      </dict>
+    </array>
+  </dict>
+</plist>
