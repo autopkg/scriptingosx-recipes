@@ -20,7 +20,7 @@ pref("signon.rememberSignons", false);
 pref("browser.shell.checkDefaultBrowser", false);
 //
 // Home page
-pref("browser.startup.homepage","${homepage_url}");
-pref("browser.startup.homepage_reset","${homepage_url}");
+pref("browser.startup.homepage","%homepage_url%");
+pref("browser.startup.homepage_reset","%homepage_url%");
 pref("browser.startup.homepage_override.buildID", "20140127194636");
-pref("browser.startup.homepage_override.mstone", "${version}");
+pref("browser.startup.homepage_override.mstone", "%version%");
