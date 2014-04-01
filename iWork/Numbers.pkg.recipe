@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>This recipe will grab the Version of Numbers installed on the current Mac and repackage it.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.pkg.numbers</string>
+	<string>com.github.scriptingosx.pkg.numbers_</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
