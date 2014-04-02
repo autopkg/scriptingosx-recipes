@@ -18,33 +18,29 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
+				<key>pathname</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>sourcelist</key>
+				<array>
+					<string>/Applications/%NAME%.app</string>
+					<string>/Library/Application Support/GarageBand</string>
+					<string>/Library/Application Support/Logic</string>
+					<string>/Library/Audio/Impulse Responses</string>
+					<string>/Library/Audio/Apple Loops</string>
+				</array>
 			</dict>
 			<key>Processor</key>
-			<string>PkgRootCreator</string>
+			<string>PathListCopier</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/GarageBand.app</string>
-				<key>source_path</key>
-				<string>/Applications/GarageBand.app</string>
-			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pkgroot%/Applications/GarageBand.app</string>
+				<string>%pathname%/Applications/GarageBand.app</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -78,6 +74,8 @@
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%pathname%</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>This recipe will grab the Version of Keynote installed on the current Mac and repackage it.</string>
+	<string>This recipe will grab the Version of Pages installed on the current Mac and repackage it.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.pkg.keynote</string>
+	<string>com.github.scriptingosx.pkg.pages_</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Keynote</string>
+		<string>Pages</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.3.0</string>
@@ -18,33 +18,25 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
+				<key>pathname</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>sourcelist</key>
+				<array>
+					<string>/Applications/%NAME%.app</string>
+				</array>
 			</dict>
 			<key>Processor</key>
-			<string>PkgRootCreator</string>
+			<string>PathListCopier</string>
 		</dict>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
-				<key>source_path</key>
-				<string>/Applications/%NAME%.app</string>
-			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pathname%/Applications/%NAME%.app</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -78,6 +70,8 @@
 					<string>purge_ds_store</string>
 					<key>pkgname</key>
 					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%pathname%</string>
 					<key>version</key>
 					<string>%version%</string>
 				</dict>
