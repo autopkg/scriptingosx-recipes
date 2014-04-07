@@ -123,3 +123,9 @@ class PathListCopier(Processor):
                     raise ProcessorError("Can't copy %s to %s: %s" % (source_item, dest_item, err))
 
 
+
+if __name__ == '__main__':
+    processor = PathListCopier()
+    processor.execute_shell()
+    
+
