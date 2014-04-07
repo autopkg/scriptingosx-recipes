@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.pkg.iPhoto</string>
+	<string>com.github.scriptingosx.pkg.iBooksAuthor</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>iPhoto</string>
+		<string>iBooks Author</string>
 		<key>mas_action</key>
 		<string>dummy</string>
 	</dict>
