@@ -12,7 +12,7 @@ import FoundationPlist
 from autopkglib import Processor, ProcessorError
 
 
-#this is from here:
+#this is from here: http://stackoverflow.com/questions/600268/mkdir-p-functionality-in-python
 def makedir_p(path):
     try:
         os.makedirs(path)
