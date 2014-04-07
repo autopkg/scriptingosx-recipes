@@ -12,7 +12,7 @@
 		<string>GarageBand</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.3.0</string>
+	<string>0.2.9</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -51,6 +51,17 @@
 			</dict>
 			<key>Processor</key>
 			<string>PlistReader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%pathname%/Applications/GarageBand.app</string>
+				<key>mas_action</key>
+				<string>dummy</string>
+			</dict>
+			<key>Processor</key>
+			<string>MASReceipt</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
