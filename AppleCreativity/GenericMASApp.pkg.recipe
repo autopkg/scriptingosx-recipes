@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>This recipe will grab the an app installed on the current Mac, repackage it. Run with -k NAME=AppName for other apps.</string>
+	<string>This recipe will grab an app installed on the current Mac, repackage it. Run with -k NAME=AppName for other apps.</string>
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.pkg.genericMASapp</string>
 	<key>Input</key>
