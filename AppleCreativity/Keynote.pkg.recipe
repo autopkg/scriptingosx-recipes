@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>This recipe will grab the Version of Keynote installed on the current Mac and repackage it.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.pkg.keynote</string>
+	<string>com.github.scriptingosx.pkg.keynote_</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
