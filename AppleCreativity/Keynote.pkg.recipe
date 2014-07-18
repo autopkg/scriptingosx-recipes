@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Keynote</string>
 		<key>mas_action</key>
-		<string>dummy</string>
+		<string>delete</string>
 	</dict>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.pkg.genericMASapp</string>
