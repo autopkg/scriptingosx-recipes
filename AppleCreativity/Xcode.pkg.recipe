@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Keynote</string>
+		<string>Xcode</string>
 		<key>mas_action</key>
 		<string>dummy</string>
 	</dict>
