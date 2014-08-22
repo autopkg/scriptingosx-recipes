@@ -23,6 +23,8 @@
 				<string></string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
+				<key>version</key>
+				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>JSSImporter</string>
