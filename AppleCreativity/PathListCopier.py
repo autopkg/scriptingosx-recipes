@@ -12,19 +12,23 @@ import FoundationPlist
 from autopkglib import Processor, ProcessorError
 
 
-#this is from here: http://stackoverflow.com/questions/600268/mkdir-p-functionality-in-python
+# this is from here:
+# http://stackoverflow.com/questions/600268/mkdir-p-functionality-in-python
 def makedir_p(path):
     try:
         os.makedirs(path)
     except OSError as exc:
         if exc.errno == errno.EEXIST and os.path.isdir(path):
             pass
-        else: raise
+        else:
+            raise
 
 
 class PathListCopier(Processor):
-    description = "Copies a list of local files and folder to pkgroot. It also compares a given path (the app) for its version and does not copy if the version in the pkgroot is the same as the the local version."
-    
+    description = """Copies a list of local files and folder to pkgroot. It also compares
+                a given path (the app) for its version and does not copy if the version in
+                the pkgroot is the same as the the local version."""
+
     input_variables = {
         "pathname": {
             "required": True,
@@ -32,11 +36,16 @@ class PathListCopier(Processor):
         },
         "check_version_path": {
             "required": False,
-            "description": "This processor will attempt to determine the vesion at the local path and pathname. If the version at pathname is the same, then it will not copy. Otherwise the data at pathname will be overwritten. If this path is not given, the first item from sourcelist will be used."
+            "description": """This processor will attempt to determine the vesion at the
+                    local path and pathname. If the version at pathname is the same, then 
+                    it will not copy. Otherwise the data at pathname will be overwritten. 
+                    If this path is not given, the first item from sourcelist will be 
+                    used."""
         },
-        "plist_version_key":{
+        "plist_version_key": {
             "required": False,
-            "description": "Key to use on the Info.plist to read the version. Default is CFBundleShortVersionString."
+            "description": """Key to use on the Info.plist to read the version. Default 
+            is CFBundleShortVersionString."""
         },
         "sourcelist": {
             "required": True,
@@ -49,7 +58,9 @@ class PathListCopier(Processor):
             "description": "The version determined by the process."
         },
         "download_changed": {
-            "description": "Boolean indicating if files where actually copied. Using this terminology so that Processors down the path treat it the same way as URLDownloader."
+            "description": """Boolean indicating if files where actually copied. Using 
+                this terminology so that Processors down the path treat it the same way
+                 as URLDownloader."""
         }
     }
     
