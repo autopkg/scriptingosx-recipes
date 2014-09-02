@@ -15,8 +15,10 @@ name with a slash:
 &lt;/dict&gt;
 
 Currently ScriptingOSX has the following shared processors:
-- Notification: shows a OS X notification
-- SendPKGWithARD: uses ARD to send and install a pkg to a given computer list in Apple Remote Desktop    </string>
+- Notification: shows a OS X notification (Sample: XQuartz/XQuartz.notify.recipe)
+- SendPKGWithARD: uses ARD to send and install a pkg to a given computer list in Apple Remote Desktop
+- FileTemplate: copies a template file and fills placeholders with autopkg key (e.g. %NAME%, %version%) (used in FirefoxUSC.pkg)
+    </string>
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.SharedProcessors</string>
 	<key>Input</key>

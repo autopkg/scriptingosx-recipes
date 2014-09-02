@@ -90,7 +90,7 @@ combination is offered.</string>
 				<string>%RECIPE_DIR%/firefox_AA.cfg.template</string>
 			</dict>
 			<key>Processor</key>
-			<string>FileTemplate</string>
+			<string>com.github.scriptingosx.SharedProcessors/FileTemplate</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
