@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Stub Recipe to locate the shared processors in this folder. 
+
+To use the processors here, instead of setting the 'Processor' key to a processor name
+only, we separate the recipe identifier and the processor
+name with a slash:
+
+&lt;dict&gt;
+    &lt;key&gt;Processor&lt;/key&gt;
+    &lt;string&gt;com.github.scriptingosx.SharedProcessors/ProcessorName&lt;/string&gt;
+&lt;/dict&gt;
+
+Currently ScriptingOSX has the following shared processors:
+- Notification: shows a OS X notification
+- SendPKGWithARD: uses ARD to send and install a pkg to a given computer list in Apple Remote Desktop    </string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.SharedProcessors</string>
+	<key>Input</key>
+	<dict/>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>Process</key>
+	<dict/>
+</dict>
+</plist>
