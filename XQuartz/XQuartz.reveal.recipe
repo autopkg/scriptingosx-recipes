@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Uses parent pkg recipe to download latest XQuartz and assigns correct version number.</string>
+	<string>Downloads and shows of a new XQuartz version</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.jss.XQuartz</string>
+	<string>com.github.scriptingosx.reveal.XQuartz</string>
 	<key>Input</key>
 	<dict/>
 	<key>MinimumVersion</key>
-	<string>0.2.5</string>
+	<string>0.4.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.pkg.XQuartz</string>
 	<key>Process</key>
@@ -17,17 +17,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>category</key>
-				<string>Tools</string>
-				<key>pkg_path</key>
+				<key>reveal_path</key>
 				<string>%pkg_path%</string>
-				<key>prod_name</key>
-				<string>%NAME%</string>
-				<key>version</key>
-				<string>%version%</string>
 			</dict>
 			<key>Processor</key>
-			<string>JSSImporter</string>
+			<string>com.github.scriptingosx.SharedProcessors/RevealInFinder</string>
 		</dict>
 	</array>
 </dict>
