@@ -7,6 +7,8 @@ from autopkglib import Processor, ProcessorError
 
 from Foundation import *
 
+import os.path
+
 def executeAppleScript(source):
     appleScript = NSAppleScript.alloc().initWithSource_(source)
     return appleScript.executeAndReturnError_(objc.NULL)
@@ -31,7 +33,8 @@ class RevealInFinder(Processor):
     def main(self):
         reveal_path = self.env["reveal_path"]
         
-        #should check wether file exists here
+        if not os.path.exists(reveal_path):
+            raise ProcessorError("The file %s does not exist!" % (reveal_path) )
         
         script_source = """tell app "Finder" to reveal posix file "%s" """
         
