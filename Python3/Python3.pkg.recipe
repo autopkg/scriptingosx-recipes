@@ -22,6 +22,8 @@
 			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/Python.mpkg</string>
+				<key>overwrite</key>
+				<true/>
 				<key>source_path</key>
 				<string>%pathname%/Python.mpkg</string>
 			</dict>
