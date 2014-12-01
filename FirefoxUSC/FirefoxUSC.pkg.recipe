@@ -14,6 +14,8 @@ combination is offered.</string>
 	<string>com.github.scriptingosx.pkg.Firefox</string>
 	<key>Input</key>
 	<dict>
+		<key>CONFIG_DIR</key>
+		<string>Resources</string>
 		<key>NAME</key>
 		<string>Firefox</string>
 	</dict>
@@ -61,7 +63,7 @@ combination is offered.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Firefox.app/Contents/MacOS/defaults/pref</string>
+				<string>%pkgroot%/Applications/Firefox.app/Contents/%CONFIG_DIR%/defaults/pref</string>
 				<key>source_path</key>
 				<string>%RECIPE_DIR%/local-settings.js</string>
 			</dict>
@@ -72,7 +74,7 @@ combination is offered.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Firefox.app/Contents/MacOS/browser/override.ini</string>
+				<string>%pkgroot%/Applications/Firefox.app/Contents/%CONFIG_DIR%/browser/override.ini</string>
 				<key>source_path</key>
 				<string>%RECIPE_DIR%/override.ini</string>
 			</dict>
@@ -83,7 +85,7 @@ combination is offered.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Firefox.app/Contents/MacOS/firefox_AA.cfg</string>
+				<string>%pkgroot%/Applications/Firefox.app/Contents/%CONFIG_DIR%/firefox_AA.cfg</string>
 				<key>homepage_url</key>
 				<string>http://www.usc.edu/</string>
 				<key>template_path</key>
