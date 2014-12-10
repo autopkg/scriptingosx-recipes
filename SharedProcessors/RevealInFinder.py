@@ -44,7 +44,7 @@ class RevealInFinder(Processor):
 
 
 if __name__ == '__main__':
-    processor = SendPKGWithARD()
+    processor = RevealInFinder()
     processor.execute_shell()
     
 
