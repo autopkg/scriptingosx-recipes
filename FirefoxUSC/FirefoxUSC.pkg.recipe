@@ -85,7 +85,7 @@ combination is offered.</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/Firefox.app/Contents/%CONFIG_DIR%/firefox_AA.cfg</string>
+				<string>%pkgroot%/Applications/Firefox.app/Contents/MacOS/firefox_AA.cfg</string>
 				<key>homepage_url</key>
 				<string>http://www.usc.edu/</string>
 				<key>template_path</key>
