@@ -61,6 +61,9 @@ class PathListCopier(Processor):
             "description": """Boolean indicating if files where actually copied. Using 
                 this terminology so that Processors down the path treat it the same way
                  as URLDownloader."""
+        },
+        "pathname": {
+        	"description": """pathname the files were copied to"""
         }
     }
     
@@ -104,12 +107,15 @@ class PathListCopier(Processor):
         target_version_path = os.path.join(pathname, os.path.relpath(check_version_path, "/"))
         target_version = self.get_version(target_version_path)
         
+        self.env["version"] = source_version
+
         # if version is equal, don't copy, write message, stop
         if target_version == source_version:
             self.output("versions match! Not copying.")
             self.env["download_changed"] = False
         else:
             self.env["download_changed"] = True
+            self.env["pathname"] = pathname
             
             # clean out pathname folder
             shutil.rmtree(pathname)
