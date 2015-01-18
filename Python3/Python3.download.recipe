@@ -12,14 +12,14 @@
 		<string>Python3</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.3.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>(?P&lt;url&gt;https:\/\/www\.python\.org\/ftp\/python\/3\.\d+\.\d+\/python-3\.\d+.\d+-macosx10\.6\.dmg)</string>
+				<string>(https://.*/python-3[a-z0-9\.\-]+\.pkg)</string>
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<string>%NAME%.pkg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -40,6 +40,21 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Ned Deily (DJ3H93M7VJ)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+			</dict>
 		</dict>
 	</array>
 </dict>
