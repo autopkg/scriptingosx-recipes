@@ -20,10 +20,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>source</key>
-				<string>%pathname%</string>
-				<key>target</key>
+				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
+				<key>source_path</key>
+				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
