@@ -18,22 +18,17 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>(https://.*/python-3[a-z0-9\.\-]+\.pkg)</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://www.python.org/downloads/</string>
+				<key>base_url</key>
+				<string>https://www.python.org/</string>
+				<key>download_page</key>
+				<string>downloads/</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>Python3URLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.pkg</string>
-			</dict>
+			<dict/>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
@@ -42,19 +37,19 @@
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>CodeSignatureVerifier</string>
 			<key>Arguments</key>
 			<dict>
-				<key>input_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.pkg</string>
 				<key>expected_authority_names</key>
 				<array>
 					<string>Developer ID Installer: Ned Deily (DJ3H93M7VJ)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
 			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>
