@@ -3,16 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Copies Python3.mpkg from the dmg downloaded.</string>
+	<string>Installs the current release version of Python3.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.pkg.Python3</string>
+	<string>com.github.scriptingosx.install.Python3</string>
 	<key>Input</key>
-	<dict>
-		<key>NAME</key>
-		<string>Python3</string>
-	</dict>
+	<dict/>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.4.0</string>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.download.Python3</string>
 	<key>Process</key>
@@ -20,13 +17,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
-				<key>source_path</key>
+				<key>pkg_path</key>
 				<string>%pathname%</string>
 			</dict>
 			<key>Processor</key>
-			<string>Copier</string>
+			<string>Installer</string>
 		</dict>
 	</array>
 </dict>

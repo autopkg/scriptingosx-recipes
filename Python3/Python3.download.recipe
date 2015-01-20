@@ -12,34 +12,44 @@
 		<string>Python3</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
+	<string>0.3.1</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>re_pattern</key>
-				<string>(?P&lt;url&gt;https:\/\/www\.python\.org\/ftp\/python\/3\.\d+\.\d+\/python-3\.\d+.\d+-macosx10\.6\.dmg)</string>
-				<key>result_output_var_name</key>
-				<string>url</string>
-				<key>url</key>
-				<string>https://www.python.org/downloads/</string>
+				<key>base_url</key>
+				<string>https://www.python.org/</string>
+				<key>download_page</key>
+				<string>downloads/</string>
 			</dict>
 			<key>Processor</key>
-			<string>URLTextSearcher</string>
+			<string>Python3URLProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
-			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
-			</dict>
+			<dict/>
 			<key>Processor</key>
 			<string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: Ned Deily (DJ3H93M7VJ)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>
