@@ -57,8 +57,9 @@ class MASReceipt(Processor):
                 finally:
                     f.close()
             elif mas_action == "delete":
-                self.output('Deleting %s' % (masreceipt_dir_path))
-                os.rmdir(masreceipt_dir_path)
+                if os.path.exists(masreceipt_dir_path):
+	                self.output('Deleting %s' % (masreceipt_dir_path))
+	                os.rmdir(masreceipt_dir_path)
         
 
 if __name__ == '__main__':
