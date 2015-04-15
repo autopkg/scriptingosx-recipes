@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict/>
 	<key>MinimumVersion</key>
-	<string>0.4.3</string>
+	<string>0.4.2</string>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.download.DjView</string>
 	<key>Process</key>
