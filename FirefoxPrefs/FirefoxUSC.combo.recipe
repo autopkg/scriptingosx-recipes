@@ -33,7 +33,7 @@ combination is offered.</string>
 			<key>developer</key>
 			<string>Mozilla</string>
 			<key>display_name</key>
-			<string>Mozilla Firefox (USC Config)</string>
+			<string>Mozilla Firefox</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -151,6 +151,25 @@ combination is offered.</string>
 				<string>%NAME%USC-%version%</string>
 				<key>pkg_path</key>
 				<string>%pkg_path%</string>
+				<key>pkginfo</key>
+				<dict>
+					<key>catalogs</key>
+					<array>
+						<string>testing</string>
+					</array>
+					<key>category</key>
+					<string>Internet</string>
+					<key>description</key>
+					<string>Mozilla Firefox is a free and open source web browser. This will also install configurations for the USC Labs.</string>
+					<key>developer</key>
+					<string>Mozilla</string>
+					<key>display_name</key>
+					<string>Mozilla Firefox (USC Config)</string>
+					<key>name</key>
+					<string>%NAME%USC</string>
+					<key>unattended_install</key>
+					<true/>
+				</dict>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
