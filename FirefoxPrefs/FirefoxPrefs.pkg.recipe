@@ -16,6 +16,8 @@ combination is offered.</string>
 	<dict>
 		<key>CONFIG_DIR</key>
 		<string>Resources</string>
+		<key>HOMEPAGE_URL</key>
+		<string>http://www.usc.edu/</string>
 		<key>NAME</key>
 		<string>FirefoxUSC</string>
 	</dict>
@@ -87,7 +89,7 @@ combination is offered.</string>
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications/Firefox.app/Contents/%CONFIG_DIR%/firefox_AA.cfg</string>
 				<key>homepage_url</key>
-				<string>http://www.usc.edu/</string>
+				<string>%HOMEPAGE_URL%</string>
 				<key>template_path</key>
 				<string>%RECIPE_DIR%/firefox_AA.cfg.template</string>
 			</dict>
