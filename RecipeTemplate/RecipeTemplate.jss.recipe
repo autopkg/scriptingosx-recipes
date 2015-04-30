@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>DESCRIPTION HERE!</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.jss.RECIPE_TEMPLATE</string>
+	<key>Input</key>
+	<dict>
+		<key>JSS_CATEGORY</key>
+		<string>Productivity</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.2</string>
+	<key>ParentRecipe</key>
+	<string>com.github.scriptingosx.pkg.RECIPE_TEMPLATE</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category</key>
+				<string>%JSS_CATEGORY%</string>
+				<key>prod_name</key>
+				<string>%NAME%</string>
+				<key>version</key>
+				<string>%version%</string>
+			</dict>
+			<key>Processor</key>
+			<string>JSSImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
