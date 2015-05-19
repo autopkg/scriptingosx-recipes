@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads TexLiveUtility into Munki</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.munki.TeXLiveUtility</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_CATEGORY</key>
+		<string>TeX</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/TeXLiveUtility</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>TeX Live Utility is a Mac OS X graphical interface for TeX Live Manager, which is a tool provided with TeX Live 2008 and later, for updating, installing, and otherwise managing TeX Live. TeX Live Utility aims to provide a native Mac OS X interface for the most commonly used functions of the TeX Live Manager command-line tool.</string>
+			<key>developer</key>
+			<string>amaxwell</string>
+			<key>display_name</key>
+			<string>TeX Live Utility</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.3</string>
+	<key>ParentRecipe</key>
+	<string>com.github.scriptingosx.pkg.TeXLiveUtility</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

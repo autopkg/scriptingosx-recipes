@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of TeXLiveUtility.</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.download.TeXLiveUtility</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>TeXLiveUtility</string>
+		<key>SEARCH_PATTERN</key>
+		<string>(?P&lt;url&gt;http://example\.com/downloads/RecipeTemplate_MacOS/(?P&lt;version&gt;.*?)/RecipeTemplate-.*?.dmg)</string>
+		<key>SEARCH_URL</key>
+		<string>https://github.com/amaxwell/tlutility/releases/latest</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.3</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>github_repo</key>
+				<string>amaxwell/tlutility</string>
+				<key>include_prereleases</key>
+				<false/>
+				<key>sort_by_highest_tag_names</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>GitHubReleasesInfoProvider</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
