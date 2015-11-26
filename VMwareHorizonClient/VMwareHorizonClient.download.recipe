@@ -11,9 +11,9 @@
 		<key>NAME</key>
 		<string>VMware-Horizon-Client</string>
 		<key>SEARCH_PATTERN</key>
-		<string>(?P&lt;url&gt;https://download3\.vmware\.com/software/view/viewclients/CART\d\dQ\d/VMware-Horizon-Client-(?P&lt;version&gt;[\d\.\-]+)\.dmg)</string>
+		<string>(?P&lt;url&gt;https://download3\.vmware\.com/software/view/viewclients/CART\d\dQ\d_\d/VMware-Horizon-Client-(?P&lt;version&gt;[\d\.\-]+)\.dmg)</string>
 		<key>SEARCH_URL</key>
-		<string>https://my.vmware.com/web/vmware/details?downloadGroup=VIEWCLIENTS_MAC_35&amp;productId=421&amp;rPId=8672</string>
+		<string>https://my.vmware.com/web/vmware/details?downloadGroup=VIEWCLIENTS_MAC_352&amp;productId=421&amp;rPId=8672</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
