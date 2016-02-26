@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Builds AptanaStudio3 pkg from the dmg downloaded.</string>
+	<string>Builds AptanaStudio3 pkg from the download.</string>
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.pkg.AptanaStudio3</string>
 	<key>Input</key>
