@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>DESCRIPTION HERE!</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.pkg.PEET</string>
+	<key>Input</key>
+	<dict/>
+	<key>MinimumVersion</key>
+	<string>0.5.2</string>
+	<key>ParentRecipe</key>
+	<string>com.github.scriptingosx.download.PEET</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>usr</key>
+					<string>755</string>
+					<key>usr/local</key>
+					<string>755</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%RELEASE%%version%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>tar_bzip2</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%peetfile%</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/usr/local/</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_format</key>
+				<string>tar_bzip2</string>
+				<key>archive_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%runtimefile%</string>
+				<key>destination_path</key>
+				<string>%pkgroot%/usr/local/</string>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array/>
+					<key>id</key>
+					<string>edu.colorado.bio3d.%NAME%</string>
+					<key>pkgname</key>
+					<string>%NAME%-%RELEASE%%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+		</dict>
+	</array>
+</dict>
+</plist>

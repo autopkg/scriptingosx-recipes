@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of PEET.</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.download.PEET</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>PEET</string>
+		<key>RELEASE</key>
+		<string></string>
+		<key>baseurl</key>
+		<string>http://bio3d.colorado.edu/ftp/PEET/osx/%RELEASE%/</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.2</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(?P&lt;peetfile&gt;Particle_(?P&lt;version&gt;\d+\.\d+\.\d+)_maci64.tar.bz2)</string>
+				<key>result_output_var_name</key>
+				<string>peetfile</string>
+				<key>url</key>
+				<string>%baseurl%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%baseurl%%peetfile%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(?P&lt;runtimefile&gt;ParticleRuntime(?P&lt;runtime_version&gt;V\d+)_maci64.tar.bz2)</string>
+				<key>result_output_var_name</key>
+				<string>runtimefile</string>
+				<key>url</key>
+				<string>%baseurl%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>%baseurl%%runtimefile%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>DESCRIPTION HERE!</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.pkg.IMOD</string>
+	<key>Input</key>
+	<dict/>
+	<key>MinimumVersion</key>
+	<string>0.5.2</string>
+	<key>ParentRecipe</key>
+	<string>com.github.scriptingosx.download.IMOD</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>root</key>
+					<string>755</string>
+					<key>root/private/</key>
+					<string>755</string>
+					<key>root/private/tmp</key>
+					<string>755</string>
+					<key>scripts</key>
+					<string>755</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%_%cuda_version%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/scripts/%scriptname%</string>
+				<key>overwrite</key>
+				<true/>
+				<key>source_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>#!/bin/sh
+this_path=$(dirname $0)
+csh -f "$this_path/%scriptname%" -y
+</string>
+				<key>file_mode</key>
+				<string>755</string>
+				<key>file_path</key>
+				<string>%pkgroot%/scripts/postinstall</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array/>
+					<key>id</key>
+					<string>edu.colorado.bio3d.%NAME%</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
+					<key>pkgroot</key>
+					<string>%pkgroot%/root</string>
+					<key>scripts</key>
+					<string>%pkgroot%/scripts</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
