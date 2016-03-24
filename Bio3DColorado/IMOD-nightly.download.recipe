@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest nightly build of IMOD.</string>
+	<key>Identifier</key>
+	<string>com.github.scriptingosx.download.IMOD-nightly</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>IMOD</string>
+		<key>cuda_version</key>
+		<string>6.0</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.5.2</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;(?P&lt;scriptname&gt;imod_(?P&lt;version&gt;\d+\.\d+\.\d+)_osx64_(?P&lt;osx_version&gt;10\.\d+)_CUDA%cuda_version%\.sh))</string>
+				<key>result_output_var_name</key>
+				<string>url</string>
+				<key>url</key>
+				<string>http://bio3d.colorado.edu/imod/nightlyBuilds/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>http://bio3d.colorado.edu/imod/nightlyBuilds/%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
