@@ -9,9 +9,12 @@ lockPref("network.cookie.prefsMigrated", true);
 // application updates
 lockPref("app.update.enabled", false);
 lockPref("app.update.auto", false);
+lockPref("app.update.mode", 0);
+lockPref("app.update.service.enabled", false);
 lockPref("extensions.update.autoUpdate", false);
 lockPref("extensions.update.enabled", false);
 lockPref("browser.search.update", false);
+
 //
 // Password Manager
 pref("signon.rememberSignons", false);
