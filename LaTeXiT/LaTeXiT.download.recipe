@@ -28,6 +28,11 @@
 				<string>%SEARCH_PATTERN%</string>
 				<key>url</key>
 				<string>%SEARCH_URL%</string>
+				<key>request_headers</key>
+				<dict>
+					<key>User-Agent</key>
+					<string>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/600.8.9 (KHTML, like Gecko) Version/8.0.8 Safari/600.8.9</string>
+				</dict>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
