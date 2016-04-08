@@ -8,7 +8,7 @@ from autopkglib import Processor, ProcessorError
 __all__ = ["DjViewURLProvider"]
 
 search_url = 'http://sourceforge.net/projects/djvu/rss?path=/DjVuLibre_MacOS'
-re_pattern = '(?P<url>http://sourceforge\.net/projects/djvu/files/DjVuLibre_MacOS/(?P<version>.*?)/DjVuLibre-.*?.dmg)'
+re_pattern = '(?P<url>https*://sourceforge\.net/projects/djvu/files/DjVuLibre_MacOS/(?P<version>.*?)/DjVuLibre-.*?.dmg)'
 #re_url = '(?P<url>https://.*/python-(?P<version>3\.\d+\.\d+).*\.pkg)'
 
 class DjViewURLProvider(Processor):
@@ -41,15 +41,15 @@ class DjViewURLProvider(Processor):
                         content = f.read()
                         f.close()
                 except BaseException as e:
-                        raise ProcessorError('Could not retrieve URL: %s' % index_url)
+                        raise ProcessorError('Could not retrieve URL: %s' % url)
 
                 re_pattern = re.compile(r'%s' % re_pattern)
 
                 m = re_pattern.search(content)
                 if not m:
                     raise ProcessorError(
-                    "Couldn't find download URL in %s"
-                    % (index_url))
+                    "Couldn't find download URL pattern (%s) in %s"
+                    % (re_pattern.pattern, url))
 
                 return { 'url': m.group("url"), 'version': m.group("version") }
 
