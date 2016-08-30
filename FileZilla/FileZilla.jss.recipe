@@ -21,9 +21,9 @@
 		<key>POLICY_TEMPLATE</key>
 		<string>PolicyTemplate.xml</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>FileZilla</string>
+		<string>FileZilla is a fast and reliable cross-platform FTP, FTPS and SFTP client.</string>
 		<key>SELF_SERVICE_ICON</key>
-		<string></string>
+		<string>%NAME%.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
