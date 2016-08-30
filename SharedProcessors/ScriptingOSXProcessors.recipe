@@ -26,6 +26,6 @@ Currently ScriptingOSX has the following shared processors:
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>Process</key>
-	<dict/>
+	<array/>
 </dict>
 </plist>
