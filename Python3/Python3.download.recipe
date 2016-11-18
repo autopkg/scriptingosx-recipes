@@ -18,13 +18,13 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>base_url</key>
-				<string>https://www.python.org/</string>
-				<key>download_page</key>
-				<string>downloads/</string>
+				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;https://.*/python-(?P&lt;version&gt;3\.\d+\.\d+).*\.pkg)</string>
+				<key>url</key>
+				<string>https://www.python.org/downloads/</string>
 			</dict>
 			<key>Processor</key>
-			<string>Python3URLProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
