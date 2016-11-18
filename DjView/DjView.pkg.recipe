@@ -17,58 +17,11 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>pkgdirs</key>
-				<dict>
-					<key>Applications</key>
-					<string>0775</string>
-				</dict>
-				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+				<key>app_path</key>
+				<string>%pathname%/%NAME%.app</string>
 			</dict>
 			<key>Processor</key>
-			<string>PkgRootCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%pkgroot%/Applications/DjView.app</string>
-				<key>overwrite</key>
-				<true/>
-				<key>source_path</key>
-				<string>%pathname%/DjView.app</string>
-			</dict>
-			<key>Processor</key>
-			<string>Copier</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_request</key>
-				<dict>
-					<key>chown</key>
-					<array>
-						<dict>
-							<key>group</key>
-							<string>admin</string>
-							<key>path</key>
-							<string>Applications</string>
-							<key>user</key>
-							<string>root</string>
-						</dict>
-					</array>
-					<key>id</key>
-					<string>org.djvu.DjView</string>
-					<key>options</key>
-					<string>purge_ds_store</string>
-					<key>pkgdir</key>
-					<string>%RECIPE_CACHE_DIR%</string>
-					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
-				</dict>
-			</dict>
-			<key>Processor</key>
-			<string>PkgCreator</string>
+			<string>AppPkgCreator</string>
 		</dict>
 	</array>
 </dict>
