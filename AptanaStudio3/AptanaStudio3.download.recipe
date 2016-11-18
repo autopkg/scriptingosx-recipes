@@ -22,7 +22,7 @@
 				<string>aptana/studio3</string>
 			</dict>
 			<key>Processor</key>
-			<string>com.github.timsutton.download.AutoDMG/GitHubReleasesInfoProvider</string>
+			<string>GitHubReleasesInfoProvider</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
