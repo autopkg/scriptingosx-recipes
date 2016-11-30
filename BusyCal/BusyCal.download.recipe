@@ -38,6 +38,21 @@
 			<key>Processor</key>
 			<string>Unarchiver</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>expected_authority_names</key>
+				<array>
+					<string>Developer ID Installer: BusyCal, LLC (N4RA379GBW)</string>
+					<string>Developer ID Certification Authority</string>
+					<string>Apple Root CA</string>
+				</array>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/pkg/BusyCal Installer.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
 	</array>
 </dict>
 </plist>

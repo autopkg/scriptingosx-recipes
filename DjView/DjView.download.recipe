@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>DjView</string>
 		<key>SEARCH_PATTERN</key>
-		<string>(?P&lt;url&gt;https://sourceforge\.net/projects/djvu/files/DjVuLibre_MacOS/(?P&lt;version&gt;.*?)/DjVuLibre-.*?.dmg)</string>
+		<string>(?P&lt;url&gt;https://sourceforge\.net/projects/djvu/files/DjVuLibre_MacOS/(?P&lt;dmgversion&gt;.*?)/DjVuLibre-.*?.dmg)</string>
 		<key>SEARCH_URL</key>
 		<string>https://sourceforge.net/projects/djvu/rss?path=/DjVuLibre_MacOS</string>
 	</dict>
@@ -28,13 +28,13 @@
 				<string>%SEARCH_URL%</string>
 			</dict>
 			<key>Processor</key>
-			<string>DjViewURLProvider</string>
+			<string>URLTextSearcher</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>filename</key>
-				<string>%NAME%-%version%.dmg</string>
+				<string>%NAME%-%dmgversion%.dmg</string>
 				<key>url</key>
 				<string>%url%</string>
 			</dict>
