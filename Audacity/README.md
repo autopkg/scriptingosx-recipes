@@ -2,7 +2,7 @@
 
 The `Audacity.download` [was removed because of a TOS violation](https://github.com/autopkg/scriptingosx-recipes/issues/21). My `Audacity.pkg` recipe used that as a parent. There are actually several recipes which use `Audacity.pkg` as their parent.
 
-I have changed `Audactiy.pkg` to use the `--pkg` option. When you download the Audacity disk image (dmg) file [from the official website](http://www.audacityteam.org/download/mac/) manually you can then run
+I have changed `Audacity.pkg` to use the `--pkg` option. When you download the Audacity disk image (dmg) file [from the official website](http://www.audacityteam.org/download/mac/) manually you can then run
 
 ```
 autopkg run Audacity.pkg --pkg ~/Downloads/audacity-macosx-ub-2.1.2.dmg
