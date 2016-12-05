@@ -7,13 +7,18 @@
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.pkg.audacity</string>
 	<key>Input</key>
-	<dict/>
+	<dict>
+		<key>NAME</key>
+		<string>Audacity</string>
+	</dict>
 	<key>MinimumVersion</key>
-	<string>0.2.9</string>
-	<key>ParentRecipe</key>
-	<string>com.github.timsutton.download.audacity</string>
+	<string>0.5.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Processor</key>
+			<string>PackageRequired</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -34,7 +39,7 @@
 				<key>destination_path</key>
 				<string>%pkgroot%/Applications/%NAME%</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%</string>
+				<string>%PKG%/%NAME%</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>
