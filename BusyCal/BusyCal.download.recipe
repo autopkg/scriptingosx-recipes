@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>BusyCal</string>
 		<key>url</key>
-		<string>http://www.busymac.com/download/BusyCal.zip</string>
+		<string>https://www.busymac.com/download/BusyCal.zip</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>
