@@ -24,6 +24,8 @@
 			<dict>
 				<key>app_path</key>
 				<string>%pathname%/%NAME%.app</string>
+				<key>bundleid</key>
+				<string>com.whatsapp.WhatsApp</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>
