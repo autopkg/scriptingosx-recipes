@@ -10,10 +10,12 @@
 	<dict>
 		<key>NAME</key>
 		<string>VMware-Horizon-Client</string>
-		<key>SEARCH_PATTERN</key>
-		<string>(?P&lt;url&gt;https://download3\.vmware\.com/software/view/viewclients/CART\d\dQ\d/VMware-Horizon-Client-(?P&lt;version&gt;[\d\.\-]+)\.dmg)</string>
-		<key>SEARCH_URL</key>
-		<string>https://my.vmware.com/web/vmware/details?productId=578&amp;rPId=114638&amp;downloadGroup=CART16Q4_MAC_430</string>
+		<key>SEARCH_PATTERN_PRODUCT_VERSION</key>
+		<string>/web/vmware/details\?downloadGroup=CART\d\dQ\d_MAC_[0-9]+&amp;productId=[0-9]+&amp;rPId=[0-9]+</string>
+		<key>SEARCH_PATTERN_DMG</key>
+		<string>https://download3.vmware.com/software/view/viewclients/CART\d\dQ\d/VMware-Horizon-Client-[\d\.\-]+\.dmg</string>
+		<key>SEARCH_URL_PRODUCT_VERSION</key>
+		<string>https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/4_0</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
@@ -23,9 +25,24 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>%SEARCH_PATTERN%</string>
+				<string>%SEARCH_PATTERN_PRODUCT_VERSION%</string>
+				<key>result_output_var_name</key>
+				<string>download_url</string>
 				<key>url</key>
-				<string>%SEARCH_URL%</string>
+				<string>%SEARCH_URL_PRODUCT_VERSION%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN_DMG%</string>
+				<key>result_output_var_name</key>
+				<string>dmg_url</string>
+				<key>url</key>
+				<string>https://my.vmware.com%download_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -34,7 +51,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>%url%</string>
+				<string>%dmg_url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
