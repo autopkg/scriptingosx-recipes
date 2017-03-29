@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2016 Armin Briegel
+# Copyright 2017 Armin Briegel
 #
 
 from autopkglib import Processor, ProcessorError
@@ -27,6 +27,9 @@ class ArchivePkg(Processor):
         "archived_pkg_path": {
              "description": "Path to the archived pkg."
         },
+        "archived_pkg_summary_result": {
+            "description": "Description of interesting results."
+        },
     }
 
     __doc__ = description
@@ -49,9 +52,9 @@ class ArchivePkg(Processor):
         else:
             shutil.copy2(pkg_path, archive_path)
             self.output("Archived %s in %s" % (pkg_path, archive_path))
-            self.env["archive_pkg_summary_result"] = {
+            self.env["archived_pkg_summary_result"] = {
                 'summary_text': 'The following packages were archived:',
-                'data': archived_pkg_path
+                'data': {'archived_pkg_path': archived_pkg_path}
             }
             self.env["archived_pkg_path"] = archived_pkg_path
 
