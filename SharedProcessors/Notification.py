@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2014 Armin Briegel
+# Copyright 2014-2017 Armin Briegel
 #
 
 from autopkglib import Processor, ProcessorError
@@ -27,39 +27,34 @@ def notify(title, subtitle, text):
 class Notification(Processor):
     description = "Uses OS X Notification Center to provide info to the user."
     input_variables = {
-        "title": {
-            "required": True,
-            "description": "Title of the Notification"
-        },
-        "subtitle": {
-            "required": False,
-            "description": "Subtitle of the Notification"
-        },
-        "message": {
-            "required": True,
-            "description": "Body text for the notification."
-        },
     }
     output_variables = {
     }
-    
-    __doc__ = description
-    
-    
-    def main(self):
-        title = self.env.get('title')
-        subtitle = self.env.get('subtitle', "")
-        message = self.env.get('message')
-        
-        open_url = self.env.get('open_url')
-        
-        # should probably check if user is logged in and skip if not
-        
-        notify(title, subtitle, message)
 
-        
-        self.output("Posted Notification %s" % title)
-    
+    __doc__ = description
+
+    def main(self):        
+        title = self.env['NAME']
+
+        message = ""
+        pkg_summary = self.env.get('pkg_creator_summary_result')
+        download_summary = self.env.get('url_downloader_summary_result')
+        if pkg_summary is not None:
+            
+            message = "New package!"
+
+        elif download_summary is not None:
+            message = "New download!"
+
+        if message is not "":   
+            version = self.env.get('version')
+            if version is not None:
+                message = message + (" Version: %s" % version)
+
+            # should probably check if user is logged in and skip if not
+            notify(title, "", message)
+            self.output("Posted Notification %s" % title)
+
 
 if __name__ == '__main__':
     processor = Notification()
