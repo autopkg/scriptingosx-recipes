@@ -45,6 +45,8 @@ Use `com.scriptingosx.processors/RevealInFinder` to add this processor as a post
 
 When this processor detects a new download or that a new package was built it will copy it to a the directory given in `archive_path`. `archive_path` can be on a file server, but it is your responsibility that the share is mounted and available at that path.
 
+Even when you don't copy to a server this can be useful to create an archive of packages outside of the ~/Library/AutoPkg/Caches folder so you can delete cache folders to remove problems with downloads or package building without losing your 'history' of packages.
+
 Input Variables:
 
 - `archive_path`: (required) path for the package/download item archive
