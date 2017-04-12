@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2014 Armin Briegel
+# Copyright 2014-2017 Armin Briegel
 #
 
 from autopkglib import Processor, ProcessorError
@@ -28,9 +28,12 @@ class RevealInFinder(Processor):
     
     def main(self):        
         reveal_path = None
+        archive_summary = self.env.get('archive_summary_result')
         pkg_summary = self.env.get('pkg_creator_summary_result')
         download_summary = self.env.get('url_downloader_summary_result')
-        if pkg_summary is not None:
+        if archive_summary is not None:
+            reveal_path = self.env.get('archived_file_path')
+        elif pkg_summary is not None:
             reveal_path = self.env.get('pkg_path')
         elif download_summary is not None:
             reveal_path = self.env.get('pathname')
