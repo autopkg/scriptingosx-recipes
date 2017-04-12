@@ -45,19 +45,21 @@ Use `com.scriptingosx.processors/RevealInFinder` to add this processor as a post
 
 When this processor detects a new download or that a new package was built it will copy it to a the directory given in `archive_path`. `archive_path` can be on a file server, but it is your responsibility that the share is mounted and available at that path.
 
-Required Input Variables:
+Input Variables:
 
 - `archive_path`: (required) path for the package/download item archive
-
-Optional Input Variables:
-
 - `archive_subdir`: (optional) subdirectory in the `archive_path` folder (e.g. `%NAME%`)
 
 Output Variables:
 
 - `archived_file_path`: Path to the archived file.
-- `archive_summary_result`: Description of interesting results. Used to display summary at the end of an `autopkg run`
+- `archive_summary_result`: Used to display summary at the end of an `autopkg run`
 
+Use `com.scriptingosx.processors/Archive` to add this processor as a post processor.
 
+To provide the required `archive_path` variable you can use the `-k/--key` argument or [a plist format recipe list](https://github.com/autopkg/autopkg/wiki/Running-Multiple-Recipes).
 
+```
+$ autopkg run Recipe1.pkg Recipe2.pkg --post com.scriptingosx.processors/Archive -k archive_path=~/Library/AutoPkg/Archive/ -k archive_subdir=%NAME%
+```
 

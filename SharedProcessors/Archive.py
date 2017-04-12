@@ -33,7 +33,7 @@ class Archive(Processor):
 
     output_variables = {
         "archived_file_path": {
-             "description": "Path to the archived pkg."
+             "description": "Path to the archived file."
         },
         "archive_summary_result": {
             "description": "Description of interesting results."
