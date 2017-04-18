@@ -11,7 +11,7 @@ Required Input Variables:
 - `destination_path`: (required) path to write the resulting file to
 - `template_path`: (required) path to the template file.
 
-String sequences in the template file which are enclosed with `%` symbols such as `%version%` or `%homepage_url` will be replaced with the value from the `autopkg` variable. You can use variables defined or obtained in previous recipe steps (e.g. `%version%` or `%NAME%`) or add additional values as input variables for the `FileTemplate` processor (see `homepage_url` in [`FirefoxPrefs.pkg`](https://github.com/autopkg/scriptingosx-recipes/blob/master/FirefoxPrefs/FirefoxPrefs.pkg.recipe))
+String sequences in the template file which are enclosed with `%` symbols such as `%version%` or `%homepage_url%` will be replaced with the value from the `autopkg` variable. You can use variables defined or obtained in previous recipe steps (e.g. `%version%` or `%NAME%`) or add additional values as input variables for the `FileTemplate` processor (see `homepage_url` in [`FirefoxPrefs.pkg`](https://github.com/autopkg/scriptingosx-recipes/blob/master/FirefoxPrefs/FirefoxPrefs.pkg.recipe))
 
 Use `com.scriptingosx.processors/FileTemplate` to add this processor to your recipes.
 
@@ -19,7 +19,7 @@ See the [`firefox_AA.cfg.template`](https://github.com/autopkg/scriptingosx-reci
 
 ## Post Processors
 
-These processors are designed to run as post-processors. You can add them to your autopkg workflow like this:
+These processors are designed to be run as post-processors. You can add them to your autopkg workflow like this:
 
 ```
 $ autopkg run Recipe1.pkg Recipe2.pkg --post com.scriptingosx.processors/Notification
@@ -45,7 +45,7 @@ Use `com.scriptingosx.processors/RevealInFinder` to add this processor as a post
 
 When this processor detects a new download or that a new package was built it will copy it to a the directory given in `archive_path`. `archive_path` can be on a file server, but it is your responsibility that the share is mounted and available at that path.
 
-Even when you don't copy to a server this can be useful to create an archive of packages outside of the ~/Library/AutoPkg/Caches folder so you can delete cache folders to remove problems with downloads or package building without losing your 'history' of packages.
+Even when you don't copy to a server this can be useful to create an archive of packages outside of the `~/Library/AutoPkg/Caches` folder so you can delete cache folders to remove problems with downloads or package building without losing your 'history' of packages.  When the processor determines that a package was built it will copy that, otherwise it will look for a downloaded file. Existing files with the same name will be overwritten.
 
 Input Variables:
 
