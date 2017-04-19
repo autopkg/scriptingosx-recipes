@@ -38,7 +38,7 @@ class Notification(Processor):
     __doc__ = description
 
     def main(self):        
-        title = self.env['NAME']
+        title = self.env.get('NAME')
 
         message = ""
         result_path = None
