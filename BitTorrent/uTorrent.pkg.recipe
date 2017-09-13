@@ -25,7 +25,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/uTorrent.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>

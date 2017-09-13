@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
-				<string>%pathname%/%NAME%.app/Contents/Info.plist</string>
+				<string>%pathname%/AutoDMG.app/Contents/Info.plist</string>
 				<key>plist_keys</key>
 				<dict>
 					<key>CFBundleIdentifier</key>
@@ -51,9 +51,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%pkgroot%/Applications/%NAME%.app</string>
+				<string>%pkgroot%/Applications/AutoDMG.app</string>
 				<key>source_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/AutoDMG.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>Copier</string>

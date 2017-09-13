@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.jleggat.Fetch.pkg</string>
+	<string>com.github.jleggat.pkg.Fetch</string>
 	<key>Process</key>
 	<array>
 		<dict>
