@@ -10,10 +10,10 @@
 	<dict>
 		<key>NAME</key>
 		<string>VMware-Horizon-Client</string>
-		<key>SEARCH_PATTERN_PRODUCT_VERSION</key>
-		<string>/web/vmware/details\?downloadGroup=CART\d\dQ\d_MAC_[0-9]+&amp;productId=[0-9]+&amp;rPId=[0-9]+</string>
 		<key>SEARCH_PATTERN_DMG</key>
-		<string>https://download3.vmware.com/software/view/viewclients/CART\d\dQ\d/VMware-Horizon-Client-[\d\.\-]+\.dmg</string>
+		<string>https://download3.vmware.com/software/view/viewclients/CART\d\d[A-Z]{1,2}\d/VMware-Horizon-Client-[\d\.\-]+\.dmg</string>
+		<key>SEARCH_PATTERN_PRODUCT_VERSION</key>
+		<string>/web/vmware/details\?downloadGroup=CART\d\d[A-Z]{1,2}\d_MAC_[0-9]+&amp;productId=[0-9]+&amp;rPId=[0-9]+</string>
 		<key>SEARCH_URL_PRODUCT_VERSION</key>
 		<string>https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/4_0</string>
 	</dict>
