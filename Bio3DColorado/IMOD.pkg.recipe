@@ -53,7 +53,7 @@
 				<key>file_content</key>
 				<string>#!/bin/sh
 this_path=$(dirname $0)
-csh -f "$this_path/%scriptname%" -y
+sh "$this_path/%scriptname%" -y
 </string>
 				<key>file_mode</key>
 				<string>755</string>
