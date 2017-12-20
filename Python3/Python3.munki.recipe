@@ -49,7 +49,7 @@
 				<key>pkg_payload_path</key>
 				<string>%RECIPE_CACHE_DIR%/unpack/Python_Applications.pkg/Payload</string>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/payload/Applications</string>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgPayloadUnpacker</string>
