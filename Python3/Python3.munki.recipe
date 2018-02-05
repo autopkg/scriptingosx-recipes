@@ -33,6 +33,20 @@
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/payload</string>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Applications</key>
+					<string>0755</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>flat_pkg_path</key>
