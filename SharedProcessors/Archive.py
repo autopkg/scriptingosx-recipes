@@ -43,7 +43,7 @@ class Archive(Processor):
     __doc__ = description
 
     def main(self):
-        archive_path = self.env.get["archive_directory"]
+        archive_path = self.env.get("archive_directory")
         archive_path = os.path.expanduser(archive_path)
 
         file_path = self.env.get("pkg_path")
