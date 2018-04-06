@@ -43,13 +43,15 @@ Use `com.scriptingosx.processors/RevealInFinder` to add this processor as a post
 
 ### Archive
 
-When this processor detects a new download or that a new package was built it will copy it to a the directory given in `archive_path`. `archive_path` can be on a file server, but it is your responsibility that the share is mounted and available at that path.
+> Update (April 2018): there was a conflict with the input variable `archive_path`, which is also used by the [Unarchiver](https://github.com/autopkg/autopkg/wiki/Processor-Unarchiver) processor. Because of this I changed the input variable name to `archive_directory`. This will break existing workflows. I apologize for the inconvenience.
+
+When this processor detects a new download or that a new package was built it will copy it to a the directory given in `archive_directory`. `archive_directory` can be on a file server, but it is your responsibility that the share is mounted and available at that path.
 
 Even when you don't copy to a server this can be useful to create an archive of packages outside of the `~/Library/AutoPkg/Caches` folder so you can delete cache folders to remove problems with downloads or package building without losing your 'history' of packages.  When the processor determines that a package was built it will copy that, otherwise it will look for a downloaded file. Existing files with the same name will be overwritten.
 
 Input Variables:
 
-- `archive_path`: (required) path for the package/download item archive
+- `archive_directory`: (required) path for the package/download item archive
 - `archive_subdir`: (optional) subdirectory in the `archive_path` folder (e.g. `%NAME%`)
 
 Output Variables:
@@ -59,9 +61,9 @@ Output Variables:
 
 Use `com.scriptingosx.processors/Archive` to add this processor as a post processor.
 
-To provide the required `archive_path` variable you can use the `-k/--key` argument or [a plist format recipe list](https://github.com/autopkg/autopkg/wiki/Running-Multiple-Recipes).
+To provide the required `archive_directory` variable you can use the `-k/--key` argument or [a plist format recipe list](https://github.com/autopkg/autopkg/wiki/Running-Multiple-Recipes).
 
 ```
-$ autopkg run Recipe1.pkg Recipe2.pkg --post com.scriptingosx.processors/Archive -k archive_path=~/Library/AutoPkg/Archive/ -k archive_subdir=%NAME%
+$ autopkg run Recipe1.pkg Recipe2.pkg --post com.scriptingosx.processors/Archive -k archive_directory=~/Library/AutoPkg/Archive/ -k archive_subdir=%NAME%
 ```
 
