@@ -21,7 +21,7 @@ class Archive(Processor):
             "required": False,
             "description": "path to the download (dmg or zip) to archive. Will not be used if pkg_path is set."
         },
-        "archive_path": {
+        "archive_directory": {
              "required": True,
              "description": "Path to the archive folder."
         },
@@ -43,7 +43,7 @@ class Archive(Processor):
     __doc__ = description
 
     def main(self):
-        archive_path = self.env["archive_path"]
+        archive_path = self.env.get["archive_directory"]
         archive_path = os.path.expanduser(archive_path)
 
         file_path = self.env.get("pkg_path")
