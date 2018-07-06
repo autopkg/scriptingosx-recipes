@@ -40,6 +40,8 @@ DjVuLibre is an open source (GPL'ed) implementation of DjVu, including viewers, 
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
