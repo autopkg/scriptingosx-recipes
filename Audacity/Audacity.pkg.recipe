@@ -12,7 +12,7 @@
 		<string>Audacity</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.51</string>
+	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
