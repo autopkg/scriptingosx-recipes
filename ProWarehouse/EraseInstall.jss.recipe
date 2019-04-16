@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Uses parent pkg recipe to downloads latest EraseInstall and imports it into the JSS.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.jss.EraseInstall</string>
+	<string>com.scriptingosx.jss.EraseInstall</string>
 	<key>Input</key>
 	<dict>
 		<key>CATEGORY</key>
@@ -28,7 +28,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.download.EraseInstall</string>
+	<string>com.scriptingosx.download.EraseInstall</string>
 	<key>Process</key>
 	<array>
 		<dict>
