@@ -15,7 +15,7 @@
 		<key>SEARCH_PATTERN_DMG</key>
 		<string>https://download3.vmware.com/software/view/viewclients/CART.*/VMware-Horizon-Client-[\d\.\-]+\.dmg</string>
 		<key>SEARCH_URL_PRODUCT_VERSION</key>
-		<string>https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/4_0</string>
+		<string>https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/5_0</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
