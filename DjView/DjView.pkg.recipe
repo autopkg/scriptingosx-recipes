@@ -18,7 +18,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/DjView.app</string>
 			</dict>
 			<key>Processor</key>
 			<string>AppPkgCreator</string>

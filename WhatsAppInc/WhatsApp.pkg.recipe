@@ -23,7 +23,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>app_path</key>
-				<string>%pathname%/%NAME%.app</string>
+				<string>%pathname%/WhatsApp.app</string>
 				<key>bundleid</key>
 				<string>com.whatsapp.WhatsApp</string>
 			</dict>
