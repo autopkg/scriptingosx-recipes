@@ -19,6 +19,17 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
+				<string>(?P&lt;url&gt;https://.*/python-(?P&lt;version_minor&gt;3\.\d+)\.\d+.*\.pkg)</string>
+				<key>url</key>
+				<string>https://www.python.org/downloads/</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
 				<string>(?P&lt;url&gt;https://.*/python-(?P&lt;version&gt;3\.\d+\.\d+).*\.pkg)</string>
 				<key>url</key>
 				<string>https://www.python.org/downloads/</string>
