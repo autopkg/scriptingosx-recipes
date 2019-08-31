@@ -8,6 +8,7 @@
 # As of version Fetch 5.7.3 the Contents/Info.plist CFBundleVersion key 
 # contains a Unicode Zero-width space that causes us lots of problems.
 
+from __future__ import absolute_import
 import re
 
 from autopkglib import Processor, ProcessorError

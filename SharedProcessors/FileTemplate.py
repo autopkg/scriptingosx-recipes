@@ -5,6 +5,7 @@
 # Created by Armin Briegel (arminb@usc.edu) on 2014-03-13.
 # 
 
+from __future__ import absolute_import
 from string import Template
 
 from autopkglib import Processor, ProcessorError

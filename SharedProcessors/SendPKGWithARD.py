@@ -3,6 +3,7 @@
 # Copyright 2014 Armin Briegel
 #
 
+from __future__ import absolute_import
 from autopkglib import Processor, ProcessorError
 
 from Foundation import *

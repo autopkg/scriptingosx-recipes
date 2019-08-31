@@ -3,6 +3,7 @@
 # Copyright 2014 Armin Briegel
 #
 
+from __future__ import absolute_import
 import os
 
 from autopkglib import Processor, ProcessorError

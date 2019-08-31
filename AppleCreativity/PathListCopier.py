@@ -3,6 +3,7 @@
 # Copyright 2014 Armin Briegel
 #
 
+from __future__ import absolute_import
 import os
 import errno
 import shutil
@@ -88,7 +89,7 @@ class PathListCopier(Processor):
             version = plist.get(version_key, None)
             self.output("Found version %s in file %s" % (version, filepath))
         
-        except FoundationPlist.FoundationPlistException, err:
+        except FoundationPlist.FoundationPlistException as err:
             raise ProcessorError(err) 
     
         return version  
@@ -136,7 +137,7 @@ class PathListCopier(Processor):
                     else:
                         shutil.copy(source_item, dest_item)
                     self.output("Copied %s to %s" % (source_item, dest_item))
-                except BaseException, err:
+                except BaseException as err:
                     raise ProcessorError("Can't copy %s to %s: %s" % (source_item, dest_item, err))
 
 
