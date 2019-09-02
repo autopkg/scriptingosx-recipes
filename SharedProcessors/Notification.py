@@ -4,12 +4,12 @@
 #
 
 from __future__ import absolute_import
-from autopkglib import Processor, ProcessorError
-
-from Foundation import NSUserNotification, NSUserNotificationCenter
-from AppKit import NSWorkspace, NSImage
 
 import os
+
+from AppKit import NSWorkspace
+from autopkglib import Processor, ProcessorError
+from Foundation import NSUserNotification, NSUserNotificationCenter
 
 __all__ = ["Notification"]
 
@@ -38,7 +38,7 @@ class Notification(Processor):
 
     __doc__ = description
 
-    def main(self):        
+    def main(self):
         title = self.env.get('NAME')
 
         message = ""
@@ -62,7 +62,7 @@ class Notification(Processor):
         if result_path is not None:
             (filename, file_type) = os.path.splitext(result_path)
 
-        if message is not "":   
+        if message is not "":
             version = self.env.get('version')
             if version is not None:
                 message = message + (" Version: %s" % version)
@@ -75,5 +75,3 @@ class Notification(Processor):
 if __name__ == '__main__':
     processor = Notification()
     processor.execute_shell()
-    
-

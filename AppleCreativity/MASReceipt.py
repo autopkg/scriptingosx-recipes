@@ -4,9 +4,11 @@
 #
 
 from __future__ import absolute_import
+
 import os
 
 from autopkglib import Processor, ProcessorError
+
 
 class MASReceipt(Processor):
     description = "Will either delete the _MASReceipt folder or replace it with a dummy receipt."

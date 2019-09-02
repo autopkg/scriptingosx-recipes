@@ -6,10 +6,10 @@
 # 
 
 from __future__ import absolute_import
+
 from string import Template
 
 from autopkglib import Processor, ProcessorError
-
 
 __all__ = ["FileTemplate"]
 

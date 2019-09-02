@@ -4,12 +4,12 @@
 #
 
 from __future__ import absolute_import
-import os
+
 import errno
+import os
 import shutil
 
 import FoundationPlist
-
 from autopkglib import Processor, ProcessorError
 
 

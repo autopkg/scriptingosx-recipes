@@ -4,10 +4,11 @@
 #
 
 from __future__ import absolute_import
-from autopkglib import Processor, ProcessorError
 
-import shutil
 import os
+import shutil
+
+from autopkglib import Processor, ProcessorError
 
 
 class Archive(Processor):
