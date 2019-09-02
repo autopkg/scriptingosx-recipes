@@ -62,7 +62,7 @@ class Notification(Processor):
         if result_path is not None:
             (filename, file_type) = os.path.splitext(result_path)
 
-        if message is not "":
+        if message != "":
             version = self.env.get('version')
             if version is not None:
                 message = message + (" Version: %s" % version)
