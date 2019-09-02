@@ -44,9 +44,9 @@ class SendPKGWithARD(Processor):
         computer_name = self.env.get("computer", None)
         computer_list = self.env.get("computer_list", None)
 
-        if computer_list != None:
+        if computer_list is not None:
             target = "computer list \"%s\"" % (computer_list)
-        elif computer_name != None:
+        elif computer_name is not None:
             target = "computer \"%s\"" % (computer_name)
         else:
             raise ProcessorError("One of the input variables 'computer' or 'computer_list' must be set!")
