@@ -3,9 +3,11 @@
 # Copyright 2014 Armin Briegel
 #
 
-from autopkglib import Processor, ProcessorError
+from __future__ import absolute_import
 
+from autopkglib import Processor, ProcessorError
 from Foundation import *
+
 
 def executeAppleScript(source):
     appleScript = NSAppleScript.alloc().initWithSource_(source)
@@ -14,7 +16,7 @@ def executeAppleScript(source):
 
 class SendPKGWithARD(Processor):
     description = "Takes a pkg and sends it to a given list of computers with ARD."
-    
+
     input_variables = {
         "pkg_path": {
             "required": True,
@@ -29,43 +31,41 @@ class SendPKGWithARD(Processor):
             "description": "Name of a computer_list in ARD. One of computer or computer_list must be set."
         },
     }
-    
+
     output_variables = {
     }
-    
+
     __doc__ = description
 
-    
+
     def main(self):
         pkg_path = self.env["pkg_path"]
-        
+
         computer_name = self.env.get("computer", None)
         computer_list = self.env.get("computer_list", None)
-        
-        if computer_list != None:
+
+        if computer_list is not None:
             target = "computer list \"%s\"" % (computer_list)
-        elif computer_name != None:
+        elif computer_name is not None:
             target = "computer \"%s\"" % (computer_name)
         else:
             raise ProcessorError("One of the input variables 'computer' or 'computer_list' must be set!")
 
         script_source = """set thepkg to (POSIX file "%s") as alias
                 tell application "Remote Desktop"
-    	            set t to make new install package task with properties {delegating to task server:false, encrypting:true, packages:{thepkg}, stopping on error:false}
-    	            execute t on %s
+                    set t to make new install package task with properties {delegating to task server:false, encrypting:true, packages:{thepkg}, stopping on error:false}
+                    execute t on %s
                 end tell
                 """
-        
+
         scriptresult = executeAppleScript( (script_source % (pkg_path, target)) )
 
         self.output("Script Result: ")
         self.output(scriptresult)
-        
+
 
 
 
 if __name__ == '__main__':
     processor = SendPKGWithARD()
     processor.execute_shell()
-    
-

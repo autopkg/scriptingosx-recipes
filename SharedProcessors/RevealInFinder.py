@@ -3,11 +3,11 @@
 # Copyright 2014-2017 Armin Briegel
 #
 
-from autopkglib import Processor, ProcessorError
+from __future__ import absolute_import
 
+from autopkglib import Processor, ProcessorError
 from Foundation import *
 
-import os.path
 
 def executeAppleScript(source):
     appleScript = NSAppleScript.alloc().initWithSource_(source)
@@ -16,17 +16,17 @@ def executeAppleScript(source):
 
 class RevealInFinder(Processor):
     description = "Reveals a given path in the Finder."
-    
+
     input_variables = {
     }
-    
+
     output_variables = {
     }
-    
+
     __doc__ = description
 
-    
-    def main(self):        
+
+    def main(self):
         reveal_path = None
         archive_summary = self.env.get('archive_summary_result')
         pkg_summary = self.env.get('pkg_creator_summary_result')
@@ -38,11 +38,11 @@ class RevealInFinder(Processor):
         elif download_summary is not None:
             reveal_path = self.env.get('pathname')
 
-        if reveal_path is not None:   
+        if reveal_path is not None:
             # should probably check if user is logged in and skip if not
             script_source = """tell app "Finder" to reveal posix file "%s" """
-        
-            scriptresult = executeAppleScript(script_source % reveal_path)      
+
+            scriptresult = executeAppleScript(script_source % reveal_path)
 
 
 

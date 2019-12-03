@@ -3,10 +3,12 @@
 # Copyright 2017 Armin Briegel
 #
 
-from autopkglib import Processor, ProcessorError
+from __future__ import absolute_import
 
-import shutil
 import os
+import shutil
+
+from autopkglib import Processor, ProcessorError
 
 
 class Archive(Processor):
