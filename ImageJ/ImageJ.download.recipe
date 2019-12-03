@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads ImageJ and imports into Munki.</string>
+	<string>Downloads ImageJ.</string>
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.download.ImageJ</string>
 	<key>Input</key>
