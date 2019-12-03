@@ -36,7 +36,7 @@
 				<key>archive_path</key>
 				<string>%decompressed_path%</string>
 				<key>destination_path</key>
-				<string>%RECIPE_DOWNLOADS_DIR%/Shellcheck</string>
+				<string>%RECIPE_CACHE_DIR%/Shellcheck</string>
 			</dict>
 			<key>Processor</key>
 			<string>Unarchiver</string>
@@ -69,7 +69,7 @@
 					<string>0775</string>
 				</dict>
 				<key>pkgroot</key>
-				<string>%RECIPE_CACHE_DIR%/Shellcheck</string>
+				<string>%RECIPE_CACHE_DIR%/Shellcheck/payload</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgRootCreator</string>
@@ -124,7 +124,6 @@
 				<key>path_list</key>
 				<array>
 					<string>%decompressed_path%</string>
-					<string>%RECIPE_DOWNLOADS_DIR%/Shellcheck</string>
 					<string>%RECIPE_CACHE_DIR%/Shellcheck</string>
 				</array>
 			</dict>

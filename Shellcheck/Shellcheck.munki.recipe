@@ -34,12 +34,6 @@
 	<array>
 		<dict>
 			<key>Arguments</key>
-			<dict/>
-			<key>Processor</key>
-			<string>MunkiPkginfoMerger</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
 				<string>%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg</string>
