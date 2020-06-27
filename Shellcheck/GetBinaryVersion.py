@@ -43,7 +43,7 @@ class GetBinaryVersion(Processor):
             re_pattern = re.compile(re_string)
             match = re_pattern.search(output)
             if not match:
-                raise ProcessorError("No match found on URL: %s" % url)
+                raise ProcessorError("No match found for version string in: %s" % output)
             return match.group(match.lastindex or 0)
         else:
             return output      
