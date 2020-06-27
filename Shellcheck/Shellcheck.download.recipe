@@ -21,7 +21,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://shellcheck.storage.googleapis.com/shellcheck-%download_version%.darwin.x86_64.tar.xz</string>
+				<string>https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-%download_version%.darwin.x86_64.tar.xz</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
