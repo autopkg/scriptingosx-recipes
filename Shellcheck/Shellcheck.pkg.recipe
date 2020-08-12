@@ -44,21 +44,6 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>binary_path</key>
-				<string>%destination_path%/shellcheck-%download_version%/shellcheck</string>
-				<key>re_pattern</key>
-				<string>ersion: (\d+\.\d+\.\d+)</string>
-				<key>version_argument</key>
-				<string>-V</string>
-			</dict>
-			<key>Comment</key>
-			<string>retrieves the version from the binary</string>
-			<key>Processor</key>
-			<string>GetBinaryVersion</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>pkgdirs</key>
 				<dict>
 					<key>usr</key>
@@ -77,8 +62,22 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%destination_path%/shellcheck-v%version%/README.txt</string>
+					<string>%destination_path%/shellcheck-v%version%/LICENSE.txt</string>
+				</array>
+			</dict>
+			<key>Comment</key>
+			<string>Leave out license and readme from download</string>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>source</key>
-				<string>%destination_path%/shellcheck-%download_version%/shellcheck</string>
+				<string>%destination_path%/shellcheck-v%version%/shellcheck </string>
 				<key>target</key>
 				<string>%pkgroot%/usr/local/bin/shellcheck</string>
 			</dict>
@@ -127,8 +126,6 @@
 					<string>%RECIPE_CACHE_DIR%/Shellcheck</string>
 				</array>
 			</dict>
-			<key>Comment</key>
-			<string>Clean up after ourselves.  Only thing left should be the .lzma and .dmg files.</string>
 			<key>Processor</key>
 			<string>PathDeleter</string>
 		</dict>
