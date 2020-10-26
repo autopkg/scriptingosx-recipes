@@ -47,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/BusyCal/Applications/BusyCal.app</string>
+				<string>%RECIPE_CACHE_DIR%/BusyCal/Applications/</string>
 				<key>pkg_payload_path</key>
 				<string>%RECIPE_CACHE_DIR%/downloads/BusyCalInstaller/BusyCal.pkg/Payload</string>
 			</dict>
