@@ -3,11 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version Horizon Client for Mac.</string>
+	<string>Downloads the latest version Horizon Client for Mac.
+
+To download a specific major version, override the HORIZON_MAJOR_VERSION variable with a value below:
+
+Version 7 (4.0): horizon_7_4_0
+Version 7 (5.0): horizon_7_5_0
+Version 8: horizon_8
+	</string>
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.download.VMwareHorizonClient</string>
 	<key>Input</key>
-	<dict/>
+	<dict>
+		<key>HORIZON_MAJOR_VERSION</key>
+		<string>horizon_8</string>
+	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
 	<key>Process</key>
@@ -22,7 +32,7 @@
 					{"name":"VMware Horizon Client for macOS","code":"CART21FQ1_MAC_543","releaseDate":"2020-07-09T07:00:00Z","productId":"863","releasePackageId":"47872","orderId":4} 
 				-->
 				<key>url</key>
-				<string>https://my.vmware.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&amp;category=desktop_end_user_computing&amp;product=vmware_horizon_clients&amp;version=5_0&amp;dlgType=PRODUCT_BINARY</string>
+				<string>https://my.vmware.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&amp;category=desktop_end_user_computing&amp;product=vmware_horizon_clients&amp;version=%HORIZON_MAJOR_VERSION%&amp;dlgType=PRODUCT_BINARY</string>
 				<!--
 					Example for 5.4.3:
 					https://my.vmware.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&category=desktop_end_user_computing&product=vmware_horizon_clients&version=5_0&dlgType=PRODUCT_BINARY
