@@ -77,7 +77,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>source</key>
-				<string>%destination_path%/shellcheck-v%version%/shellcheck </string>
+				<string>%destination_path%/shellcheck-v%version%/shellcheck</string>
 				<key>target</key>
 				<string>%pkgroot%/usr/local/bin/shellcheck</string>
 			</dict>
