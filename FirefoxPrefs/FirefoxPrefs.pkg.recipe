@@ -118,9 +118,9 @@ combination is offered.</string>
 					<string>purge_ds_store</string>
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%</string>
+					<key>pkgname</key>
+					<string>%NAME%-%version%</string>
 				</dict>
-				<key>pkgname</key>
-				<string>%NAME%-%version%</string>
 			</dict>
 			<key>Processor</key>
 			<string>PkgCreator</string>
