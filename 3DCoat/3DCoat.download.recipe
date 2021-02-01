@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of 3DCoat. (based on the hansen-m recipe)</string>
+	<key>Identifier</key>
+	<string>com.scriptingosx.download.3DCoat</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>3DCoat</string>
+		<key>SEARCH_PATTERN</key>
+		<string>&lt;span class="download-icon"&gt;(?P&lt;version&gt;[0-9.]+)&lt;\/span&gt;</string>
+		<key>SEARCH_URL</key>
+		<string>https://3dcoat.com/download/</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.2</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>re_pattern</key>
+				<string>%SEARCH_PATTERN%</string>
+				<key>url</key>
+				<string>%SEARCH_URL%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%.dmg</string>
+				<key>url</key>
+				<string>https://pilgway.com/~sergyi/3DCoat/3DCoat-%version%.dmg</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

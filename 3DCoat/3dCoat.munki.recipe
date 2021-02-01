@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of 3DCoat and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.scriptingosx.munki.3DCoat</string>
+	<key>Input</key>
+	<dict>
+		<key>CATEGORY</key>
+		<string>Additional</string>
+		<key>DEVELOPER</key>
+		<string>3D Coat Software</string>
+		<key>DISPLAY_NAME</key>
+		<string>3D Coat</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/3DCoat</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>%CATEGORY%</string>
+			<key>description</key>
+			<string>3DCoat is the one application that has all the tools you need to take your 3D idea from a block of digital clay all the way to a production ready, fully textured organic or hard surface model.</string>
+			<key>developer</key>
+			<string>%DEVELOPER%</string>
+			<key>display_name</key>
+			<string>%DISPLAY_NAME%</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.2</string>
+	<key>ParentRecipe</key>
+	<string>com.scriptingosx.download.3DCoat</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
