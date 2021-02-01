@@ -10,10 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>3DCoat</string>
-		<key>SEARCH_PATTERN</key>
-		<string>&lt;span class="download-icon"&gt;(?P&lt;version&gt;[0-9.]+)&lt;\/span&gt;</string>
-		<key>SEARCH_URL</key>
-		<string>https://3dcoat.com/download/</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.2</string>
@@ -23,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>%SEARCH_PATTERN%</string>
+				<string>&lt;span class="download-icon"&gt;(?P&lt;version&gt;[0-9.]+)&lt;\/span&gt;</string>
 				<key>url</key>
-				<string>%SEARCH_URL%</string>
+				<string>https://3dcoat.com/download/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
