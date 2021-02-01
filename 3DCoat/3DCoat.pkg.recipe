@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Builds 3DCoat pkg from the download.</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.pkg.3DCoat</string>
+	<string>com.scriptingosx.pkg.3DCoat</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
