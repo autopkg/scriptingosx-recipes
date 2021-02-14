@@ -10,8 +10,6 @@
 	<string>com.scriptingosx.pkg.Nomadesk</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.NomaDesk</string>
 		<key>NAME</key>
 		<string>Nomadesk</string>
 	</dict>
