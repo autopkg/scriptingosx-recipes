@@ -8,40 +8,8 @@
 	<string>com.github.scriptingosx.download.ImageJ</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_CATEGORY</key>
-		<string>Image Processing</string>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps</string>
 		<key>NAME</key>
 		<string>ImageJ</string>
-		<key>pkginfo</key>
-		<dict>
-			<key>blocking_applications</key>
-			<array>
-				<string>ImageJ</string>
-			</array>
-			<key>catalogs</key>
-			<array>
-				<string>testing</string>
-			</array>
-			<key>category</key>
-			<string>%MUNKI_CATEGORY%</string>
-			<key>description</key>
-			<string>Image Processing and Analysis in Java. Open source software to read and write GIF, JPEG, and ASCII. Read BMP, DICOM, FITS, and more.</string>
-			<key>developer</key>
-			<string>Wayne Rasband</string>
-			<key>name</key>
-			<string>%NAME%</string>
-			<key>unattended_install</key>
-			<true/>
-			<key>uninstall_method</key>
-			<string>uninstall_script</string>
-			<key>uninstall_script</key>
-			<string>#!/bin/sh
-
-rm -rf /Applications/ImageJ
-</string>
-		</dict>
 	</dict>
 	<key>Process</key>
 	<array>
