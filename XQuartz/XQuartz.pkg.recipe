@@ -15,37 +15,56 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack</string>
-				<key>flat_pkg_path</key>
-				<string>%pathname%/%NAME%.pkg</string>
-			</dict>
 			<key>Processor</key>
 			<string>FlatPkgUnpacker</string>
+			<key>Arguments</key>
+			<dict>
+				<key>flat_pkg_path</key>
+				<string>%pathname%/[xX][qQ]uartz.pkg</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unpack</string>
+			</dict>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>PkgPayloadUnpacker</string>
 			<key>Arguments</key>
 			<dict>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/payload/</string>
 				<key>pkg_payload_path</key>
-				<string>%RECIPE_CACHE_DIR%/unpack/x11.pkg/Payload</string>
+				<string>%RECIPE_CACHE_DIR%/unpack/XQuartzComponent.pkg/Payload</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgPayloadUnpacker</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>PlistReader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>info_path</key>
 				<string>%RECIPE_CACHE_DIR%/payload/Applications/Utilities/XQuartz.app</string>
 			</dict>
-			<key>Processor</key>
-			<string>PlistReader</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%RECIPE_CACHE_DIR%/payload/Applications/Utilities/XQuartz.app</string>
+				<key>comment</key>
+				<string>Blanking the expected_authority_names value from the parent recipe to prevent errors</string>
+				<key>expected_authority_names</key>
+				<string/>
+				<key>strict_verification</key>
+				<true/>
+				<key>requirement</key>
+				<string>(identifier "org.xquartz.X11" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = NA574AWV7E)</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
@@ -53,10 +72,10 @@
 				<key>source_pkg</key>
 				<string>%pathname%/XQuartz.pkg</string>
 			</dict>
-			<key>Processor</key>
-			<string>PkgCopier</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>path_list</key>
@@ -65,8 +84,6 @@
 					<string>%RECIPE_CACHE_DIR%/payload</string>
 				</array>
 			</dict>
-			<key>Processor</key>
-			<string>PathDeleter</string>
 		</dict>
 	</array>
 </dict>
