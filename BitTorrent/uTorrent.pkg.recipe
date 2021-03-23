@@ -10,8 +10,6 @@
 	<string>com.scriptingosx.pkg.uTorrent</string>
 	<key>Input</key>
 	<dict>
-		<key>BUNDLE_ID</key>
-		<string>com.bittorrent.uTorrent</string>
 		<key>NAME</key>
 		<string>uTorrent</string>
 	</dict>
