@@ -26,7 +26,7 @@ Version 8: horizon_8
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>{\"name\":\"VMware Horizon Client for macOS\",\"code\":\"(?P&lt;downloadGroup&gt;(?P&lt;clientGroup&gt;CART.*?)_MAC_[\d]+?)\",\"releaseDate\":\".*\",\"productId\":\".*\",\"releasePackageId\":\".*\",\"orderId\":.*}</string>
+				<string>{\"name\":\"VMware Horizon Client for macOS\",\"code\":\"(?P&lt;downloadGroup&gt;(?P&lt;clientGroup&gt;CART.*?)_MAC_.*?)\",\"releaseDate\":\".*\",\"productId\":\".*\",\"releasePackageId\":\".*\",\"orderId\":.*}</string>
 				<!--
 					Example for 5.4.3:
 					{"name":"VMware Horizon Client for macOS","code":"CART21FQ1_MAC_543","releaseDate":"2020-07-09T07:00:00Z","productId":"863","releasePackageId":"47872","orderId":4} 
