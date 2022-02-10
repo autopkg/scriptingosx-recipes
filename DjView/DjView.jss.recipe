@@ -18,7 +18,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>category</key>
-				<string>Productivity</string>
+				<string>%CATEGORY%</string>
 				<key>prod_name</key>
 				<string>%NAME%</string>
 				<key>version</key>
