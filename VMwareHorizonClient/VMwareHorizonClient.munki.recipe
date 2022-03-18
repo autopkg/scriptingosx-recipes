@@ -27,7 +27,7 @@
 			<key>display_name</key>
 			<string>VMware Horizon Client for Mac</string>
 			<key>name</key>
-			<string>%NAME%</string>
+			<string>VMware Horizon Client</string>
 			<key>postinstall_script</key>
 			<string>#!/bin/sh
 /Applications/VMware\ Horizon\ Client.app/Contents/Library/InitUsbServices.tool
