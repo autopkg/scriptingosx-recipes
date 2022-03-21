@@ -66,10 +66,10 @@ Version 8: horizon_8
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://download3.vmware.com/software/view/viewclients/%clientGroup%/%dmg_url%</string>
+				<string>https://download3.vmware.com/software/%downloadGroup%/%dmg_url%</string>
 				<!--
-					Example for 5.4.3:
-					https://download3.vmware.com/software/view/viewclients/CART21FQ1/VMware-Horizon-Client-5.4.3-16499473.dmg
+					Example for 8.4.1:
+					https://download3.vmware.com/software/CART23FQ1_MAC_2111_1/VMware-Horizon-Client-2111.1-8.4.1-19484634.dmg
 				-->
 			</dict>
 			<key>Processor</key>
