@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/local/autopkg/python
 #
 # Copyright 2019 Armin Briegel
 # based on LZMADecompress by Nick McSpadden 2013
