@@ -9,7 +9,7 @@ import errno
 import os
 import shutil
 
-import plistlib
+from plistlib import load
 from autopkglib import Processor, ProcessorError
 
 
@@ -84,7 +84,8 @@ class PathListCopier(Processor):
             return None
 
         try:
-            plist = plistlib.readPlist(filepath)
+            with open(filepath, 'rb') as f:
+                plist = load(f)
             version_key = self.env.get("plist_version_key", "CFBundleShortVersionString")
             version = plist.get(version_key, None)
             self.output("Found version %s in file %s" % (version, filepath))
