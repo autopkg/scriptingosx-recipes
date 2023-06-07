@@ -21,7 +21,7 @@
 				<key>re_pattern</key>
 				<string>(?P&lt;url&gt;https://.*/python-(?P&lt;version_minor&gt;3\.\d+)\.\d+.*\.pkg)</string>
 				<key>url</key>
-				<string>https://www.python.org/downloads/</string>
+				<string>https://www.python.org/downloads/macos</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -32,7 +32,7 @@
 				<key>re_pattern</key>
 				<string>(?P&lt;url&gt;https://.*/python-(?P&lt;version&gt;3\.\d+\.\d+).*\.pkg)</string>
 				<key>url</key>
-				<string>https://www.python.org/downloads/</string>
+				<string>https://www.python.org/downloads/macos</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -52,7 +52,7 @@
 			<dict>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Installer: Ned Deily (DJ3H93M7VJ)</string>
+					<string>Developer ID Installer: Python Software Foundation (BMM5U3QVKW)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
