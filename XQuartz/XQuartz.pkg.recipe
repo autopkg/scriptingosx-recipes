@@ -20,7 +20,7 @@
 				<key>Arguments</key>
 				<dict>
 					<key>flat_pkg_path</key>
-					<string>%pathname%</string>
+					<string>%pathname%/XQuartz.pkg</string>
 					<key>destination_path</key>
 					<string>%RECIPE_CACHE_DIR%/unpack</string>
 				</dict>
