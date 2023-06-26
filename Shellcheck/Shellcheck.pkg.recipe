@@ -20,21 +20,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>decompressor</key>
-				<string>%RECIPE_DIR%/xz</string>
-			</dict>
-			<key>Comment</key>
-			<string>Uses a custom processor to decompress .xz file</string>
-			<key>Processor</key>
-			<string>XZUnarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%decompressed_path%</string>
+				<key>archive_format</key>
+				<string>tar</string>
 				<key>destination_path</key>
 				<string>%RECIPE_CACHE_DIR%/Shellcheck</string>
 			</dict>
@@ -122,7 +109,6 @@
 			<dict>
 				<key>path_list</key>
 				<array>
-					<string>%decompressed_path%</string>
 					<string>%RECIPE_CACHE_DIR%/Shellcheck</string>
 				</array>
 			</dict>
