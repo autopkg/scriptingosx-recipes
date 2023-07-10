@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version Horizon Client for Mac.
+	<string>Downloads the latest version of VMWare Horizon Client for Mac.
 
 To download a specific major version, override the HORIZON_MAJOR_VERSION variable with a value below:
 
