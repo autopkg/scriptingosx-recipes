@@ -84,7 +84,7 @@ class PathListCopier(Processor):
             return None
 
         try:
-            plist = plistlib.readPlist(filepath)
+            plist = plistlib.loads(filepath)
             version_key = self.env.get("plist_version_key", "CFBundleShortVersionString")
             version = plist.get(version_key, None)
             self.output("Found version %s in file %s" % (version, filepath))
