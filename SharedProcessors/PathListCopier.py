@@ -24,6 +24,15 @@ def makedir_p(path):
         else:
             raise
 
+def read_plist(pathname):
+        """reads a plist from pathname"""
+        if not pathname:
+            return {}
+        try:
+            with open(pathname, "rb") as f:
+                return plistlib.load(f)
+        except Exception as err:
+            raise ProcessorError(f"Could not read {pathname}: {err}")
 
 class PathListCopier(Processor):
     description = """Copies a list of local files and folder to pkgroot. It also compares
@@ -84,7 +93,7 @@ class PathListCopier(Processor):
             return None
 
         try:
-            plist = plistlib.readPlist(filepath)
+            plist = read_plist(filepath)
             version_key = self.env.get("plist_version_key", "CFBundleShortVersionString")
             version = plist.get(version_key, None)
             self.output("Found version %s in file %s" % (version, filepath))
