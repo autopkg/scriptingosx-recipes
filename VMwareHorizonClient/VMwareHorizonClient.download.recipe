@@ -3,20 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest version of VMWare Horizon Client for Mac.
+	<string>Downloads the latest version of Omnissa Horizon Client for Mac.
 
 To download a specific major version, override the HORIZON_MAJOR_VERSION variable with a value below:
 
-Version 7 (4.0): horizon_7_4_0
-Version 7 (5.0): horizon_7_5_0
-Version 8: horizon_8
+Version 8: 8
 	</string>
 	<key>Identifier</key>
 	<string>com.github.scriptingosx.download.VMwareHorizonClient</string>
 	<key>Input</key>
 	<dict>
 		<key>HORIZON_MAJOR_VERSION</key>
-		<string>horizon_8</string>
+		<string>8</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
@@ -26,16 +24,16 @@ Version 8: horizon_8
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>{\"name\":\"VMware Horizon Client for macOS\",\"code\":\"(?P&lt;downloadGroup&gt;(?P&lt;clientGroup&gt;CART.*?)_MAC_.*?)\",\"releaseDate\":\".*\",\"productId\":\".*\",\"releasePackageId\":\".*\",\"isFirmwareImage\":.*,\"orderId\":.*}</string>
+				<string>{\"name\":\"Omnissa Horizon Client for macOS\",\"code\":\"(?P&lt;downloadGroup&gt;(?P&lt;clientGroup&gt;CART.*?)_MAC_.*?)\",\"releaseDate\":\".*\",\"productId\":\".*\",\"releasePackageId\":\".*\",\"isFirmwareImage\":.*,\"orderId\":.*}</string>
 				<!--
-					Example for 5.4.3:
-					{"name":"VMware Horizon Client for macOS","code":"CART21FQ1_MAC_543","releaseDate":"2020-07-09T07:00:00Z","productId":"863","releasePackageId":"47872","orderId":4} 
+					Example for 8.14.0:
+					{"name":"Omnissa Horizon Client for macOS","code":"CART25FQ4_MAC_2412","releaseDate":"2024-12-24 00:00:00.0","productId":"1562","releasePackageId":"118889","isFirmwareImage":null}],"orderId":2}
 				-->
 				<key>url</key>
-				<string>https://customerconnect.omnissa.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&amp;category=desktop_end_user_computing&amp;product=vmware_horizon_clients&amp;version=%HORIZON_MAJOR_VERSION%&amp;dlgType=PRODUCT_BINARY</string>
+				<string>https://customerconnect.omnissa.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&amp;category=desktop_end_user_computing&amp;product=omnissa_horizon_clients&amp;version=%HORIZON_MAJOR_VERSION%&amp;dlgType=PRODUCT_BINARY</string>
 				<!--
-					Example for 5.4.3:
-					https://my.vmware.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&category=desktop_end_user_computing&product=vmware_horizon_clients&version=5_0&dlgType=PRODUCT_BINARY
+					Example for 8.14.0:
+					https://customerconnect.omnissa.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&category=desktop_end_user_computing&product=omnissa_horizon_clients&version=8&dlgType=PRODUCT_BINARY
 				-->
 			</dict>
 			<key>Processor</key>
@@ -45,18 +43,18 @@ Version 8: horizon_8
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
-				<string>VMware-Horizon-Client-.*\.dmg</string>
+				<string>Omnissa-Horizon-Client-.*\.dmg</string>
 				<!--
-					Example for 5.4.3:
-					VMware-Horizon-Client-5.4.3-16499473.dmg
+					Example for 8.14.0:
+					Omnissa-Horizon-Client-2412-8.14.0-12437218286.dmg
 				-->
 				<key>result_output_var_name</key>
 				<string>dmg_url</string>
 				<key>url</key>
-				<string>https://customerconnect.omnissa.com/channel/public/api/v1.0/dlg/details?locale=en_US&amp;category=desktop_end_user_computing&amp;product=vmware_horizon_clients&amp;version=5_0&amp;dlgType=PRODUCT_BINARY&amp;downloadGroup=%downloadGroup%</string>
+				<string>https://customerconnect.omnissa.com/channel/public/api/v1.0/dlg/details?locale=en_US&amp;downloadGroup=%downloadGroup%</string>
 				<!--
-					Example for 5.4.3:
-					https://my.vmware.com/channel/public/api/v1.0/dlg/details?locale=en_US&category=desktop_end_user_computing&product=vmware_horizon_clients&version=5_0&dlgType=PRODUCT_BINARY&downloadGroup=CART21FQ1_MAC_543
+					Example for 8.14.0:
+					https://customerconnect.omnissa.com/channel/public/api/v1.0/dlg/details?locale=en_US&downloadGroup=CART25FQ4_MAC_2412
 				-->
 			</dict>
 			<key>Processor</key>
@@ -68,8 +66,8 @@ Version 8: horizon_8
 				<key>url</key>
 				<string>https://download3.omnissa.com/software/%downloadGroup%/%dmg_url%</string>
 				<!--
-					Example for 8.4.1:
-					https://download3.vmware.com/software/CART23FQ1_MAC_2111_1/VMware-Horizon-Client-2111.1-8.4.1-19484634.dmg
+					Example for 8.14.0:
+					https://download3.omnissa.com/software/CART25FQ4_MAC_2412/Omnissa-Horizon-Client-2412-8.14.0-12437218286.dmg
 				-->
 			</dict>
 			<key>Processor</key>
