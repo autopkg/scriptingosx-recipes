@@ -31,7 +31,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0</string>
 	<key>ParentRecipe</key>
-	<string>com.scriptingosx.download.EraseInstall</string>
+	<string>com.github.grahampugh.recipes.download.erase-install</string>
 	<key>Process</key>
 	<array>
 		<dict>
