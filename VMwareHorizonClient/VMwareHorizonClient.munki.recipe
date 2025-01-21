@@ -39,11 +39,31 @@
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.3</string>
+	<string>1.1</string>
 	<key>ParentRecipe</key>
 	<string>com.github.scriptingosx.download.VMwareHorizonClient</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe has been deprecated. VMWare Horizon Client has been replaced with Omnissa Horizon Client.
+
+Please use the new recipes located here: https://github.com/autopkg/dataJAR-recipes/tree/master/Omnissa%20Horizon%20Client </string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>TRUEPREDICATE</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

@@ -19,9 +19,29 @@ Version 8: horizon_8
 		<string>horizon_8</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>0.4.2</string>
+	<string>1.1</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe has been deprecated. VMWare Horizon Client has been replaced with Omnissa Horizon Client.
+
+Please use the new recipes located here: https://github.com/autopkg/dataJAR-recipes/tree/master/Omnissa%20Horizon%20Client </string>
+			</dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>TRUEPREDICATE</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -29,7 +49,7 @@ Version 8: horizon_8
 				<string>{\"name\":\"VMware Horizon Client for macOS\",\"code\":\"(?P&lt;downloadGroup&gt;(?P&lt;clientGroup&gt;CART.*?)_MAC_.*?)\",\"releaseDate\":\".*\",\"productId\":\".*\",\"releasePackageId\":\".*\",\"isFirmwareImage\":.*,\"orderId\":.*}</string>
 				<!--
 					Example for 5.4.3:
-					{"name":"VMware Horizon Client for macOS","code":"CART21FQ1_MAC_543","releaseDate":"2020-07-09T07:00:00Z","productId":"863","releasePackageId":"47872","orderId":4} 
+					{"name":"VMware Horizon Client for macOS","code":"CART21FQ1_MAC_543","releaseDate":"2020-07-09T07:00:00Z","productId":"863","releasePackageId":"47872","orderId":4}
 				-->
 				<key>url</key>
 				<string>https://customerconnect.omnissa.com/channel/public/api/v1.0/products/getRelatedDLGList?locale=en_US&amp;category=desktop_end_user_computing&amp;product=vmware_horizon_clients&amp;version=%HORIZON_MAJOR_VERSION%&amp;dlgType=PRODUCT_BINARY</string>
