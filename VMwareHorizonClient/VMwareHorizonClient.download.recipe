@@ -21,6 +21,15 @@ Version 8: 8
 	<key>Process</key>
 	<array>
 		<dict>
+			<key>Processor</key>
+			<string>DeprecationWarning</string>
+			<key>Arguments</key>
+			<dict>
+				<key>warning_message</key>
+				<string>This recipe is deprecated. Horizon Client was rebranded to Omnissa, breaking almost every line of this recipe. Consider using `com.github.dataJAR-recipes.download.Omnissa Horizon Client` instead.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>re_pattern</key>
