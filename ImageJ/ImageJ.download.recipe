@@ -19,7 +19,7 @@
 				<key>re_pattern</key>
 				<string>Version (?P&lt;version&gt;[0-9a-z\.]*)</string>
 				<key>url</key>
-				<string>http://rsbweb.nih.gov/ij/notes.html</string>
+				<string>https://rsbweb.nih.gov/ij/notes.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -42,7 +42,7 @@
 				<key>filename</key>
 				<string>ij.jar</string>
 				<key>url</key>
-				<string>http://rsb.info.nih.gov/ij/upgrade/ij.jar</string>
+				<string>https://rsb.info.nih.gov/ij/upgrade/ij.jar</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -53,7 +53,7 @@
 				<key>re_pattern</key>
 				<string>download/osx/ImageJ[0-9]*\.zip</string>
 				<key>url</key>
-				<string>http://rsbweb.nih.gov/ij/download.html</string>
+				<string>https://rsbweb.nih.gov/ij/download.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -64,7 +64,7 @@
 				<key>filename</key>
 				<string>%NAME%.zip</string>
 				<key>url</key>
-				<string>http://rsbweb.nih.gov/ij/%match%</string>
+				<string>https://rsbweb.nih.gov/ij/%match%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

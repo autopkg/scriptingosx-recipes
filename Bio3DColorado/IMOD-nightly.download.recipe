@@ -25,7 +25,7 @@
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>http://bio3d.colorado.edu/imod/nightlyBuilds/</string>
+				<string>https://bio3d.colorado.edu/imod/nightlyBuilds/</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -34,7 +34,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://bio3d.colorado.edu/imod/nightlyBuilds/%url%</string>
+				<string>https://bio3d.colorado.edu/imod/nightlyBuilds/%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>

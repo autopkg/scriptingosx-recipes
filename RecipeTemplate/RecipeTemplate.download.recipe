@@ -13,7 +13,7 @@
 		<key>SEARCH_PATTERN</key>
 		<string>(?P&lt;url&gt;http://example\.com/downloads/RecipeTemplate_MacOS/(?P&lt;version&gt;.*?)/RecipeTemplate-.*?.dmg)</string>
 		<key>SEARCH_URL</key>
-		<string>http://example.com/projects/recipetemplate</string>
+		<string>https://example.com/projects/recipetemplate</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>

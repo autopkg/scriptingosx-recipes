@@ -13,7 +13,7 @@
 		<key>RELEASE</key>
 		<string></string>
 		<key>baseurl</key>
-		<string>http://bio3d.colorado.edu/ftp/PEET/osx/%RELEASE%/</string>
+		<string>https://bio3d.colorado.edu/ftp/PEET/osx/%RELEASE%/</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.5.2</string>

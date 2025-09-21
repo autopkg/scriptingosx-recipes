@@ -23,7 +23,7 @@
 				<key>result_output_var_name</key>
 				<string>url</string>
 				<key>url</key>
-				<string>http://bio3d.colorado.edu/imod/download.html</string>
+				<string>https://bio3d.colorado.edu/imod/download.html</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -32,7 +32,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>http://bio3d.colorado.edu/imod/%url%</string>
+				<string>https://bio3d.colorado.edu/imod/%url%</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
