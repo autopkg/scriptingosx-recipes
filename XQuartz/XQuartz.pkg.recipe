@@ -55,7 +55,7 @@
 					<key>comment</key>
 					<string>Blanking the expected_authority_names value from the parent recipe to prevent errors</string>
 					<key>expected_authority_names</key>
-					<string/>
+					<array/>
 					<key>strict_verification</key>
 					<true/>
 					<key>requirement</key>
