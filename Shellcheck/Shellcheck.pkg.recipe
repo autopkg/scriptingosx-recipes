@@ -12,7 +12,7 @@
 		<string>Shellcheck</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>2.7.6</string>
 	<key>ParentRecipe</key>
 	<string>com.scriptingosx.download.shellcheck</string>
 	<key>Process</key>
@@ -98,7 +98,7 @@
 					<key>pkgdir</key>
 					<string>%RECIPE_CACHE_DIR%/</string>
 					<key>pkgname</key>
-					<string>%NAME%-%version%</string>
+					<string>%NAME%-%ARCH%-%version%</string>
 				</dict>
 			</dict>
 			<key>Processor</key>
