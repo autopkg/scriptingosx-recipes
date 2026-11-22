@@ -3,21 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads latest version of the shellcheck binary.</string>
+	<string>Downloads latest version of the shellcheck binary. Set ARCH to either arm64 or x86_64.</string>
 	<key>Identifier</key>
 	<string>com.scriptingosx.download.shellcheck</string>
 	<key>Input</key>
 	<dict>
+		<key>ARCH</key>
+		<string>arm64</string>
 		<key>NAME</key>
 		<string>Shellcheck</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>2.7.6</string>
 	<key>Process</key>
 	<array>
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>find</key>
+				<string>arm64</string>
+				<key>input_string</key>
+				<string>%ARCH%</string>
+				<key>replace</key>
+				<string>aarch64</string>
+				<key>result_output_var_name</key>
+				<string>DOWNLOAD_ARCH</string>
+			</dict>
+			<key>Comment</key>
+			<string>The shellcheck release assets name Apple Silicon builds aarch64</string>
+			<key>Processor</key>
+			<string>FindAndReplace</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>asset_regex</key>
+				<string>^shellcheck-v.+\.darwin\.%DOWNLOAD_ARCH%\.tar\.gz$</string>
 				<key>github_repo</key>
 				<string>koalaman/shellcheck</string>
 			</dict>

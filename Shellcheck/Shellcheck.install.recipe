@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict/>
 	<key>MinimumVersion</key>
-	<string>1.1</string>
+	<string>2.7.6</string>
 	<key>ParentRecipe</key>
 	<string>com.scriptingosx.pkg.shellcheck</string>
 	<key>Process</key>
